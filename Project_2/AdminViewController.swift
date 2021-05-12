@@ -9,9 +9,10 @@ import UIKit
 
 class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var userDict:[String:String] = [:]
+    //var userDict:[String:String] = [:]
     var user = [String]()
     var selected = ""
+    let data = DBHelper.inst.getData()
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -22,19 +23,17 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         return user.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let data = DBHelper.inst.getData()
-        for st in data{
-            userDict[st.username!] = st.password
-            user.append(st.username!)
-        }
+        print(user[row])
         return user[row]
         
     }
-    
+ 
+    /*
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selected = user[row]
         print(user[row])
     }
+ */
  
     
 
@@ -66,7 +65,12 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+          for st in data{
+              // userDict[st.username!] = st.password
+              user.append(st.username!)
+          }
         // Do any additional setup after loading the view.
     }
     
