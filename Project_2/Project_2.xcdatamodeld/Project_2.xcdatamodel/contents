@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Question" representedClassName="Question" syncable="YES">
+        <attribute name="ans1" optional="YES" attributeType="String"/>
+        <attribute name="ans2" optional="YES" attributeType="String"/>
+        <attribute name="ans3" optional="YES" attributeType="String"/>
+        <attribute name="ans4" optional="YES" attributeType="String"/>
+        <attribute name="cans" optional="YES" attributeType="String"/>
+        <attribute name="qid" optional="YES" attributeType="String"/>
+        <attribute name="questions" optional="YES" attributeType="String"/>
+        <relationship name="qtoz" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Quiz" inverseName="ztoq" inverseEntity="Quiz"/>
+    </entity>
+    <entity name="Quiz" representedClassName="Quiz" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="questions" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="ztoq" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="qtoz" inverseEntity="Question"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="block" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="score2" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Question" positionX="-54" positionY="18" width="128" height="163"/>
+        <element name="Quiz" positionX="-54" positionY="45" width="128" height="88"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="118"/>
+    </elements>
+</model>
