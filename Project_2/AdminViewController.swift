@@ -82,6 +82,9 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
     }
     
+    @IBAction func deletetion(_ sender: Any) {
+        DBHelper.inst.clearData()
+    }
     /*
     // MARK: - Navigation
 

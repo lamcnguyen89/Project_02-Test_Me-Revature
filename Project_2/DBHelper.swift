@@ -54,12 +54,13 @@ class DBHelper{
     }
     
     
-    func addQuiz(object : [String:String], questions : Double){
+    func addQuiz(name: String, questions : Double){
         let quiz = NSEntityDescription.insertNewObject(forEntityName: "Quiz", into: context!) as! Quiz
-       
+        quiz.name = name
+        quiz.questions = questions
         do{
             try context?.save()
-            print("Data Save")
+            print("Data Saved for Quiz")
             
         }
         catch{
@@ -67,6 +68,48 @@ class DBHelper{
         }
         
     }
+    
+    func updateQuiz(quiz : String, question : Question){
+        
+        var st = Quiz()
+        print("st made")
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Quiz")
+        print("Fetched")
+        fetchReq.predicate = NSPredicate(format: "name == %@", quiz)
+        print("Predicated")
+        
+        do{
+            let stu = try context?.fetch(fetchReq)
+            st = stu?.first as! Quiz
+            print("It shall try to make relationship")
+            st.addToZtoq(question)
+            try context?.save()
+            print("Updated Questions For Quiz")
+        }
+        catch{
+            print("Error")
+        }
+        
+    }
+    
+    func getOneQuiz(quiz : String) -> Quiz{
+        
+        var st = Quiz()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Quiz")
+        fetchReq.predicate = NSPredicate(format: "name == %@", quiz)
+        
+        do{
+            let stu = try context?.fetch(fetchReq)
+            st = stu?.first as! Quiz
+            
+        }
+        catch{
+            print("Error")
+        }
+        return st
+        
+    }
+    
     func updateData(object : [String:String]){
         
         var st = User()
@@ -119,11 +162,14 @@ class DBHelper{
         let del = NSBatchDeleteRequest(fetchRequest: rvar)
         let qvar = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
         let qdel = NSBatchDeleteRequest(fetchRequest: qvar)
+        let quizvar = NSFetchRequest<NSFetchRequestResult>(entityName: "Quiz")
+        let quizdel = NSBatchDeleteRequest(fetchRequest: quizvar)
 
         do{
             print("Data deleted")
             try context?.execute(del)
             try context?.execute(qdel)
+            try context?.execute(quizdel)
         }
         catch{
             print("error")
