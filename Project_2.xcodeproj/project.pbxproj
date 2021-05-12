@@ -26,6 +26,7 @@
 		84EE3524264B329D002AED57 /* Quiz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE3522264B329D002AED57 /* Quiz+CoreDataProperties.swift */; };
 		84EE352C264B8907002AED57 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE352B264B8907002AED57 /* SignUpViewController.swift */; };
 		84EE352F264B8C71002AED57 /* QuestionMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE352E264B8C71002AED57 /* QuestionMakerViewController.swift */; };
+		84EE3535264C3128002AED57 /* QuizMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE3534264C3128002AED57 /* QuizMakerViewController.swift */; };
 		CB5DF08E434D9DFAC566D559 /* Pods_Project_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6EA4196F56951CA363818B /* Pods_Project_2.framework */; };
 		DE14B42E264B737E00E9D5B1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14B42D264B737E00E9D5B1 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		84EE3522264B329D002AED57 /* Quiz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84EE352B264B8907002AED57 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84EE352E264B8C71002AED57 /* QuestionMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionMakerViewController.swift; sourceTree = "<group>"; };
+		84EE3534264C3128002AED57 /* QuizMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMakerViewController.swift; sourceTree = "<group>"; };
 		DE14B42D264B737E00E9D5B1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E317369B4B6EA56610CB5A97 /* Pods-Project_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_2.release.xcconfig"; path = "Target Support Files/Pods-Project_2/Pods-Project_2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 				DE14B42D264B737E00E9D5B1 /* WelcomeViewController.swift */,
 				84EE352B264B8907002AED57 /* SignUpViewController.swift */,
 				84EE352E264B8C71002AED57 /* QuestionMakerViewController.swift */,
+				84EE3534264C3128002AED57 /* QuizMakerViewController.swift */,
 			);
 			path = Project_2;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				84BFD8452649911F001DB459 /* Project_2.xcdatamodeld in Sources */,
 				84AF9B6E2649D39C00AA28B1 /* LoginViewController.swift in Sources */,
 				84BFD83D2649911E001DB459 /* SceneDelegate.swift in Sources */,
+				84EE3535264C3128002AED57 /* QuizMakerViewController.swift in Sources */,
 				84EE3523264B329D002AED57 /* Quiz+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
