@@ -20,11 +20,12 @@
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="score2" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="subtype" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Question" positionX="-54" positionY="18" width="128" height="163"/>
         <element name="Quiz" positionX="-54" positionY="45" width="128" height="88"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>
