@@ -33,6 +33,7 @@ class DBHelper{
             print("data not saved")
         }
     }
+   
     
     func addDataQuestions(qid : String, choices : [String:String], questionAct : String){
         let question = NSEntityDescription.insertNewObject(forEntityName: "Question", into: context!) as! Question
