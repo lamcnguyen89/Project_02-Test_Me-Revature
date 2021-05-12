@@ -1,8 +1,8 @@
 //
 //  Quiz+CoreDataProperties.swift
-//  Project_2
+//  
 //
-//  Created by admin on 5/11/21.
+//  Created by admin on 5/12/21.
 //
 //
 
@@ -36,9 +36,5 @@ extension Quiz {
 
     @objc(removeZtoq:)
     @NSManaged public func removeFromZtoq(_ values: NSSet)
-
-}
-
-extension Quiz : Identifiable {
 
 }
