@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
             if(userName.text! == i && pass.text! == v){
                 LoginViewController.GlobalVariable.us = userName.text!
                 LoginViewController.GlobalVariable.p = pass.text!
-                
+                DBHelper.inst.holdCurrentUser(name: userName.text!)
                 let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
                 present(redir, animated:true, completion: nil)
             }
