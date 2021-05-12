@@ -23,19 +23,31 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func Save(_ sender: Any) {
-        
-        if Password.text == Password_Again.text {
-            let dic = ["username" : Username.text, "password" : Password.text]
-            DBHelper.inst.addData(object: dic as! [String:String])
-            var sb = UIStoryboard(name: "Main", bundle: nil)
-            var wel = sb.instantiateViewController(withIdentifier: "Login") as! UIViewController
-            self.present(wel, animated: true, completion: nil)
-        } else{
+        var u : String = Username.text!
+        var p : String = Password.text!
+        var pp : String = Password_Again.text!
+        if(u.isEmpty == false && p.isEmpty == false && pp.isEmpty == false){
+            if(p == pp){
+                let dic = ["username" : Username.text, "password" : Password.text]
+                DBHelper.inst.addData(object: dic as! [String:String])
+                var sb = UIStoryboard(name: "Main", bundle: nil)
+                var wel = sb.instantiateViewController(withIdentifier: "Login") as! UIViewController
+                self.present(wel, animated: true, completion: nil)
+            }
+            else{
+                warning.text = "Passwords did not match, try again"
+                warning.backgroundColor = UIColor.white
+            }
+            
+        }
+        else{
             warning.text = "Passwords did not match, try again"
             warning.backgroundColor = UIColor.white
+            
         }
+        
     }
-    
+  
     /*
     // MARK: - Navigation
 
