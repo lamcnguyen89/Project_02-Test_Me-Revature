@@ -16,7 +16,7 @@ class TakeQuizViewController: UIViewController {
     var container : [Question]?
     var questionCount = 0
     var timer = Timer()
-    var score = 0.0
+    static var score = 0.0
     var seconds = 1800
     var answerPicked = ""
     
@@ -41,8 +41,8 @@ class TakeQuizViewController: UIViewController {
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TakeQuizViewController.updateTimer)), userInfo: nil, repeats: true)
         questionCount = 0
-        score = 0.0
-        scorel.text = "Score: " + String(score)
+        TakeQuizViewController.score = 0.0
+        scorel.text = "Score: " + String(TakeQuizViewController.score)
         loadQuestion()
 
     
@@ -82,20 +82,42 @@ class TakeQuizViewController: UIViewController {
     
     @IBAction func submitAnswer(_ sender: Any) {
         
-        if answerPicked == container?[questionCount].cans{
-            score = score + 33
-            scorel.text = "Score: " + String(score)
+        print(answerPicked)
+        print((container?[questionCount].cans)!)
+        if answerPicked.elementsEqual((container?[questionCount].cans)!){
+            TakeQuizViewController.score = TakeQuizViewController.score + 33
+            print(String(TakeQuizViewController.score))
+            scorel.text = "Score: " + String(TakeQuizViewController.score)
         }
         
         
         questionCount = questionCount + 1
         if questionCount == container?.count {
             var current = DBHelper.inst.getCurrentUser()
+            print("Here getting something")
             var user = DBHelper.inst.getOneUser(user: current)
             
-            if(user.score < score){
-                DBHelper.inst.updateDataScore(username: current, object: score)
-                
+            if(user.score < TakeQuizViewController.score){
+                DBHelper.inst.updateDataScore(username: current, object: TakeQuizViewController.score)
+                var user = DBHelper.inst.getOneUser(user : current)
+                if user.qtaken == 0{
+                    DBHelper.inst.addScore(quiz: quizName, name: current, score: TakeQuizViewController.score)
+                } else {
+                    var found = false
+                    var scoresTemp = DBHelper.inst.getScoreDataOneGeneral(name : current)
+                    for i in scoresTemp{
+                        if(i.quiz == quizName){
+                            found = true
+                            
+                        }
+                        if (i.quiz == quizName && i.score < TakeQuizViewController.score){
+                            DBHelper.inst.updateScore(quiz: quizName, name: current, score: TakeQuizViewController.score)
+                        }
+                    }
+                    if found == false{
+                        DBHelper.inst.addScore(quiz: quizName, name: current, score: TakeQuizViewController.score)
+                    }
+                }
             }
             var sb = UIStoryboard(name: "Main", bundle: nil)
             var wel = sb.instantiateViewController(withIdentifier: "UserViewController") as! UIViewController
