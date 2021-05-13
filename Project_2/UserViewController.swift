@@ -7,7 +7,29 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
+    var quizArray = DBHelper.inst.getQuiz()
+    var quizNames = [String]()
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return quizNames.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return quizNames[row]
+        
+    }
+ 
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(quizNames[row])
+        DBHelper.inst.holdCurrentQuiz(name : quizNames[row])
+       
+    }
 
     @IBOutlet weak var user: UILabel!
     
@@ -15,6 +37,11 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         user.text = "Welcome " +  DBHelper.inst.current
         // Do any additional setup after loading the view.
+        
+        for st in quizArray{
+            quizNames.append(st.name!)
+        }
+        
     }
     
 
