@@ -17,7 +17,7 @@ class TakeQuizViewController: UIViewController {
     var questionCount = 0
     var timer = Timer()
     var score = 0.0
-    var seconds = 60
+    var seconds = 1800
     var answerPicked = ""
     
 
@@ -50,40 +50,41 @@ class TakeQuizViewController: UIViewController {
     
     @objc func updateTimer(){
         seconds -= 1
-        time.text = "Time Left: " + String(seconds)
+        time.text = "Time Left: " + timeMaker(time: TimeInterval(seconds))
         
     }
     
+    func timeMaker(time:TimeInterval) ->String{
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
     @IBAction func choiceA(_ sender: Any) {
-        messageLabel.text = "Choice A was selected"
         answerPicked = (container?[questionCount].ans1!)!
     }
     
     @IBAction func choiceB(_ sender: Any) {
-        messageLabel.text = "Choice B was selected"
         answerPicked = (container?[questionCount].ans2!)!
         
     }
     
     @IBAction func choiceC(_ sender: Any) {
-        messageLabel.text = "Choice C was selected"
         answerPicked = (container?[questionCount].ans3!)!
         
     }
     
     @IBAction func choiceD(_ sender: Any) {
-        messageLabel.text = "Choice D was selected"
         answerPicked = (container?[questionCount].ans4!)!
         
     }
     
     @IBAction func submitAnswer(_ sender: Any) {
-        messageLabel.text = "Submit button was pressed"
         
         if answerPicked == container?[questionCount].cans{
             score = score + 33
             scorel.text = "Score: " + String(score)
-            
         }
         
         
@@ -115,7 +116,6 @@ class TakeQuizViewController: UIViewController {
     
     
     @IBAction func exitQuiz(_ sender: Any) {
-        messageLabel.text = "Exit button was pressed"
     }
     
     // Function to Load the question from the database
