@@ -36,6 +36,9 @@ class MyButtons : UIButton {
         self.layer.cornerRadius = 8
         self.layer.masksToBounds = true
         self.titleLabel?.font = UIFont(name: "System", size: 20)
+        self.frame.size.width = 200
+    
+    
     }
     
     
