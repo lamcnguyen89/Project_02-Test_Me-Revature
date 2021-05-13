@@ -209,6 +209,30 @@ class DBHelper{
         }
         
     }
+    
+    func updateDataScoreZero(username : String){
+        
+        var st = User()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "username == %@", username)
+        
+        do{
+            let stu = try context?.fetch(fetchReq)
+            
+            if(stu?.count != 0){
+                st = stu?.first as! User
+                st.score = 0
+                try context?.save()
+                
+            }
+            
+        }
+        catch{
+            print("Error")
+        }
+        
+    }
+    
     func getData()-> [User]{
         var stu = [User]()
         var fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -309,12 +333,15 @@ class DBHelper{
         let qdel = NSBatchDeleteRequest(fetchRequest: qvar)
         let quizvar = NSFetchRequest<NSFetchRequestResult>(entityName: "Quiz")
         let quizdel = NSBatchDeleteRequest(fetchRequest: quizvar)
-
+        let scorevar = NSFetchRequest<NSFetchRequestResult>(entityName: "ScoreHolder")
+        let scoredel = NSBatchDeleteRequest(fetchRequest: scorevar)
+        
         do{
             print("Data deleted")
             try context?.execute(del)
             try context?.execute(qdel)
             try context?.execute(quizdel)
+            try context?.execute(scoredel)
         }
         catch{
             print("error")

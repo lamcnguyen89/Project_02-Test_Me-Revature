@@ -43,6 +43,7 @@ class TakeQuizViewController: UIViewController {
         questionCount = 0
         TakeQuizViewController.score = 0.0
         scorel.text = "Score: " + String(TakeQuizViewController.score)
+        DBHelper.inst.updateDataScoreZero(username : DBHelper.inst.getCurrentUser())
         loadQuestion()
 
     
@@ -98,7 +99,6 @@ class TakeQuizViewController: UIViewController {
             var user = DBHelper.inst.getOneUser(user: current)
             
             if(user.score < TakeQuizViewController.score){
-                DBHelper.inst.updateDataScore(username: current, object: TakeQuizViewController.score)
                 var user = DBHelper.inst.getOneUser(user : current)
                 if user.qtaken == 0{
                     DBHelper.inst.addScore(quiz: quizName, name: current, score: TakeQuizViewController.score)
