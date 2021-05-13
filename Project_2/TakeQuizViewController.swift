@@ -15,9 +15,17 @@ class TakeQuizViewController: UIViewController {
     var quizCheck : Quiz?
     var container : [Question]?
     var questionCount = 0
+    var timer = Timer()
+    var score = 0.0
+    var seconds = 1800
     var answerPicked = ""
     
 
+    @IBOutlet weak var time: UILabel!
+    
+    
+    @IBOutlet weak var scorel: UILabel!
+    
 
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -31,48 +39,83 @@ class TakeQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TakeQuizViewController.updateTimer)), userInfo: nil, repeats: true)
+        questionCount = 0
+        score = 0.0
+        scorel.text = "Score: " + String(score)
         loadQuestion()
 
     
     }
     
+    @objc func updateTimer(){
+        seconds -= 1
+        time.text = "Time Left: " + timeMaker(time: TimeInterval(seconds))
+        
+    }
+    
+    func timeMaker(time:TimeInterval) ->String{
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
     @IBAction func choiceA(_ sender: Any) {
-        messageLabel.text = "Choice A was selected"
         answerPicked = (container?[questionCount].ans1!)!
     }
     
     @IBAction func choiceB(_ sender: Any) {
-        messageLabel.text = "Choice B was selected"
         answerPicked = (container?[questionCount].ans2!)!
         
     }
     
     @IBAction func choiceC(_ sender: Any) {
-        messageLabel.text = "Choice C was selected"
         answerPicked = (container?[questionCount].ans3!)!
         
     }
     
     @IBAction func choiceD(_ sender: Any) {
-        messageLabel.text = "Choice D was selected"
         answerPicked = (container?[questionCount].ans4!)!
         
     }
     
     @IBAction func submitAnswer(_ sender: Any) {
-        messageLabel.text = "Submit button was pressed"
         
         if answerPicked == container?[questionCount].cans{
-            //var user = DBHelper.inst.getData().
+            score = score + 33
+            scorel.text = "Score: " + String(score)
         }
+        
+        
         questionCount = questionCount + 1
+        if questionCount == container?.count {
+            var current = DBHelper.inst.getCurrentUser()
+            var user = DBHelper.inst.getOneUser(user: current)
+            
+            if(user.score < score){
+                DBHelper.inst.updateDataScore(username: current, object: score)
+                
+            }
+            var sb = UIStoryboard(name: "Main", bundle: nil)
+            var wel = sb.instantiateViewController(withIdentifier: "UserViewController") as! UIViewController
+            self.present(wel, animated: true, completion: nil)
+            
+        } else {
+            var first = container?[questionCount]
+            progressLabel.text = String(questionCount + 1) + " out of " + String(container!.count)
+            questionLabel.text = first?.questions
+            choiceALabel.setTitle(first?.ans1, for: .normal)
+            choiceBLabel.setTitle(first?.ans2, for: .normal)
+            choiceCLabel.setTitle(first?.ans3, for: .normal)
+            choiceDLabel.setTitle(first?.ans4, for: .normal)
+            
+        }
         
     }
     
     
     @IBAction func exitQuiz(_ sender: Any) {
-        messageLabel.text = "Exit button was pressed"
     }
     
     // Function to Load the question from the database
@@ -88,6 +131,7 @@ class TakeQuizViewController: UIViewController {
         choiceBLabel.setTitle(first?.ans2, for: .normal)
         choiceCLabel.setTitle(first?.ans3, for: .normal)
         choiceDLabel.setTitle(first?.ans4, for: .normal)
+        progressLabel.text = String(questionCount + 1) + " out of " + String(container!.count)
         
         
         

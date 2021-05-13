@@ -545,7 +545,7 @@
         <!--User View Controller-->
         <scene sceneID="2Da-cl-ChF">
             <objects>
-                <viewController storyboardIdentifier="UserViewController" id="mUt-qX-6Xk" customClass="UserViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mUt-qX-6Xk" customClass="UserViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0uM-To-Vo9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -694,20 +694,6 @@
                                     <action selector="submitAnswer:" destination="x3F-f1-8tD" eventType="touchUpInside" id="2LR-xx-tzW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-19-hV8">
-                                <rect key="frame" x="47" y="506" width="300" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Category Goes Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U86-pR-ZmN">
-                                <rect key="frame" x="72" y="566" width="250" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaI-zQ-C12">
                                 <rect key="frame" x="122" y="633" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -716,6 +702,20 @@
                                     <action selector="exitQuiz:" destination="x3F-f1-8tD" eventType="touchUpInside" id="nO9-Vz-GAS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK9-PP-h8d">
+                                <rect key="frame" x="11" y="64" width="133" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFZ-5S-PLk">
+                                <rect key="frame" x="164" y="63" width="211" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3u4-aq-vhZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -726,10 +726,10 @@
                         <outlet property="choiceBLabel" destination="iYI-VS-2KI" id="LFC-UB-96z"/>
                         <outlet property="choiceCLabel" destination="rJW-UR-4QV" id="buM-Ph-X7Q"/>
                         <outlet property="choiceDLabel" destination="VjW-7a-eXQ" id="GYD-Ez-p74"/>
-                        <outlet property="messageLabel" destination="fVd-19-hV8" id="Bsp-kH-asY"/>
                         <outlet property="progressLabel" destination="tlx-CE-Mr0" id="zvw-i6-h66"/>
-                        <outlet property="questionCategory" destination="U86-pR-ZmN" id="GQi-XZ-0YI"/>
                         <outlet property="questionLabel" destination="x2d-S9-4y3" id="7Dl-Jr-NWe"/>
+                        <outlet property="scorel" destination="hK9-PP-h8d" id="s9p-IX-Pnb"/>
+                        <outlet property="time" destination="aFZ-5S-PLk" id="lQ8-mi-49w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDH-ga-6Sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
