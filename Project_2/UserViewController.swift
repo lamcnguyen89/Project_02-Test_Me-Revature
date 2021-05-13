@@ -11,6 +11,9 @@ class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewD
     var quizArray = DBHelper.inst.getQuiz()
     var quizNames = [String]()
     
+    
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

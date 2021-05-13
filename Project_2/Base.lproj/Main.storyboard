@@ -572,6 +572,14 @@
                                     <outlet property="delegate" destination="mUt-qX-6Xk" id="m17-GG-ggK"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuZ-HJ-7hC">
+                                <rect key="frame" x="180" y="391" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take Quiz"/>
+                                <connections>
+                                    <segue destination="dlz-SZ-Lau" kind="show" id="Hoe-Lj-cm7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ILl-K6-7gs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -611,7 +619,7 @@
             <objects>
                 <viewController id="x3F-f1-8tD" customClass="TakeQuizViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lv-PW-Frd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JML-t6-KMj">
@@ -712,6 +720,7 @@
                         <viewLayoutGuide key="safeArea" id="3u4-aq-vhZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Vgl-eG-0rd"/>
                     <connections>
                         <outlet property="choiceALabel" destination="gtu-lJ-hUe" id="8Vw-q2-j25"/>
                         <outlet property="choiceBLabel" destination="iYI-VS-2KI" id="LFC-UB-96z"/>
@@ -732,18 +741,19 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dlz-SZ-Lau" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="oms-w3-hUk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gl9-kI-Z16">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="lax-kF-w9G" kind="relationship" relationship="rootViewController" id="i83-x1-ZsU"/>
+                        <segue destination="x3F-f1-8tD" kind="relationship" relationship="rootViewController" id="pS1-SU-UDg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFK-SZ-jh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3118.840579710145" y="45.535714285714285"/>
+            <point key="canvasLocation" x="3109" y="46"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
