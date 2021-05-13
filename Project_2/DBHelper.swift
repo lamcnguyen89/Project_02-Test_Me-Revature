@@ -25,6 +25,7 @@ class DBHelper{
         user.password = object["password"]
         user.score = 0.0
         user.qtaken = 0
+        user.taken = false
         do{
             try context?.save()
             print("Data Save")
@@ -210,7 +211,7 @@ class DBHelper{
         
     }
     
-    func updateDataScoreZero(username : String){
+    func updateTaken(username : String){
         
         var st = User()
         var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
@@ -221,7 +222,7 @@ class DBHelper{
             
             if(stu?.count != 0){
                 st = stu?.first as! User
-                st.score = 0
+                st.taken = true
                 try context?.save()
                 
             }
@@ -290,8 +291,7 @@ class DBHelper{
         
         do{
             
-            let stu = try context?.fetch(fetchReq)
-            st = stu?.first as! [ScoreHolder]
+            st = try context?.fetch(fetchReq) as! [ScoreHolder]
         }
         catch{
             print("cannot fetch the data")

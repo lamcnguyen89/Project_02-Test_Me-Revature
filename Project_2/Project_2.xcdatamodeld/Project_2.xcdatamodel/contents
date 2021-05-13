@@ -27,12 +27,13 @@
         <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="score2" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="subtype" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="taken" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Question" positionX="-54" positionY="18" width="128" height="163"/>
         <element name="Quiz" positionX="-54" positionY="45" width="128" height="88"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="ScoreHolder" positionX="-45" positionY="72" width="128" height="88"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="163"/>
     </elements>
 </model>
