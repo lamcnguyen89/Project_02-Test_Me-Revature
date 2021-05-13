@@ -39,14 +39,36 @@ class QuizMakerViewController: UIViewController {
                     print("Got to the update code")
                     DBHelper.inst.updateQuiz(quiz: name.text!, question: insertion)
                 }
-            }
-            print("Attempting Retrieval")
-            var quizcheck = DBHelper.inst.getOneQuiz(quiz: name.text!)
-            var container = quizcheck.ztoq?.allObjects
-            for printer in container!{
-                print(printer)
-            }
-        }
+                print("Attempting Retrieval Same Size")
+                var quizcheck = DBHelper.inst.getOneQuiz(quiz: name.text!)
+                var container = quizcheck.ztoq?.allObjects
+                for printer in container!{
+                    print(printer)
+                }
+                
+            } else {
+                var newQuestionHolder = [Question]()
+                while newQuestionHolder.count < Int(numQ.text!)!{
+                    var pulled = questionHolder.randomElement()
+                    if newQuestionHolder.contains(pulled!){
+                        print("Already Inside")
+                    } else {
+                        newQuestionHolder.append(pulled!)
+                    }
+                }
+                
+                for insertion in newQuestionHolder{
+                    print("Got to the update code")
+                    DBHelper.inst.updateQuiz(quiz: name.text!, question: insertion)
+                }
+                print("Attempting Retrieval Same Size")
+                var quizcheck = DBHelper.inst.getOneQuiz(quiz: name.text!)
+                var container = quizcheck.ztoq?.allObjects
+                for printer in container!{
+                    print(printer)
+                }
+                    }
+    }
     }
     
     /*
