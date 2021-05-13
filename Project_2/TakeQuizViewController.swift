@@ -15,9 +15,17 @@ class TakeQuizViewController: UIViewController {
     var quizCheck : Quiz?
     var container : [Question]?
     var questionCount = 0
+    var timer = Timer()
+    var score = 0.0
+    var seconds = 60
     var answerPicked = ""
     
 
+    @IBOutlet weak var time: UILabel!
+    
+    
+    @IBOutlet weak var scorel: UILabel!
+    
 
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -31,10 +39,19 @@ class TakeQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TakeQuizViewController.updateTimer)), userInfo: nil, repeats: true)
+        questionCount = 0
+        score = 0.0
+        scorel.text = "Score: " + String(score)
         loadQuestion()
 
     
+    }
+    
+    @objc func updateTimer(){
+        seconds -= 1
+        time.text = "Time Left: " + String(seconds)
+        
     }
     
     @IBAction func choiceA(_ sender: Any) {
@@ -64,9 +81,35 @@ class TakeQuizViewController: UIViewController {
         messageLabel.text = "Submit button was pressed"
         
         if answerPicked == container?[questionCount].cans{
-            //var user = DBHelper.inst.getData().
+            score = score + 33
+            scorel.text = "Score: " + String(score)
+            
         }
+        
+        
         questionCount = questionCount + 1
+        if questionCount == container?.count {
+            var current = DBHelper.inst.getCurrentUser()
+            var user = DBHelper.inst.getOneUser(user: current)
+            
+            if(user.score < score){
+                DBHelper.inst.updateDataScore(username: current, object: score)
+                
+            }
+            var sb = UIStoryboard(name: "Main", bundle: nil)
+            var wel = sb.instantiateViewController(withIdentifier: "UserViewController") as! UIViewController
+            self.present(wel, animated: true, completion: nil)
+            
+        } else {
+            var first = container?[questionCount]
+            progressLabel.text = String(questionCount + 1) + " out of " + String(container!.count)
+            questionLabel.text = first?.questions
+            choiceALabel.setTitle(first?.ans1, for: .normal)
+            choiceBLabel.setTitle(first?.ans2, for: .normal)
+            choiceCLabel.setTitle(first?.ans3, for: .normal)
+            choiceDLabel.setTitle(first?.ans4, for: .normal)
+            
+        }
         
     }
     
@@ -88,6 +131,7 @@ class TakeQuizViewController: UIViewController {
         choiceBLabel.setTitle(first?.ans2, for: .normal)
         choiceCLabel.setTitle(first?.ans3, for: .normal)
         choiceDLabel.setTitle(first?.ans4, for: .normal)
+        progressLabel.text = String(questionCount + 1) + " out of " + String(container!.count)
         
         
         
