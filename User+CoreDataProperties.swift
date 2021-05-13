@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  
 //
-//  Created by admin on 5/12/21.
+//  Created by admin on 5/13/21.
 //
 //
 
@@ -20,7 +20,8 @@ extension User {
     @NSManaged public var password: String?
     @NSManaged public var score: Double
     @NSManaged public var score2: Double
-    @NSManaged public var username: String?
     @NSManaged public var subtype: Bool
+    @NSManaged public var username: String?
+    @NSManaged public var qtaken: Double
 
 }
