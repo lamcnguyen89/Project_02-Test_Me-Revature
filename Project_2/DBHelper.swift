@@ -24,6 +24,7 @@ class DBHelper{
         user.username = object["username"]
         user.password = object["password"]
         user.score = 0.0
+        user.qtaken = 0
         do{
             try context?.save()
             print("Data Save")
@@ -34,7 +35,41 @@ class DBHelper{
             print("data not saved")
         }
     }
-   
+    
+    func addScore(quiz : String, name : String, score : Double){
+        let scores = NSEntityDescription.insertNewObject(forEntityName: "ScoreHolder", into: context!) as! ScoreHolder
+        scores.user = name
+        scores.quiz = quiz
+        scores.score = score
+
+        do{
+            try context?.save()
+        }
+        catch{
+            print("data not saved")
+        }
+    }
+    
+    func updateScore(quiz : String, name : String, score : Double){
+        var st = ScoreHolder()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "ScoreHolder")
+        print("Fetched")
+        fetchReq.predicate = NSPredicate(format: "quiz == %@", quiz)
+        fetchReq.predicate = NSPredicate(format: "user == %@", name)
+        print("Predicated")
+        
+        do{
+            let stu = try context?.fetch(fetchReq)
+            st = stu?.first as! ScoreHolder
+            st.score = score
+            try context?.save()
+            print("Updated Questions For Quiz")
+        }
+        catch{
+            print("Error")
+        }
+        
+    }
     
     func addDataQuestions(qid : String, choices : [String:String], questionAct : String){
         let question = NSEntityDescription.insertNewObject(forEntityName: "Question", into: context!) as! Question
@@ -185,6 +220,60 @@ class DBHelper{
             print("cannot fetch the data")
         }
         return stu
+    }
+    
+    func getScoreData()-> [ScoreHolder]{
+        var stu = [ScoreHolder]()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "ScoreHolder")
+
+        do{
+            stu = try context?.fetch(fetchReq) as!
+     [ScoreHolder]
+            
+        }
+        catch{
+            print("cannot fetch the data")
+        }
+        return stu
+    }
+    
+    func getScoreDataOne(quiz : String, name : String)->[ScoreHolder]{
+        var st = [ScoreHolder]()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "ScoreHolder")
+        print("Fetched")
+        fetchReq.predicate = NSPredicate(format: "quiz == %@", quiz)
+        fetchReq.predicate = NSPredicate(format: "user == %@", name)
+        print("Predicated")
+        
+        do{
+            
+            let stu = try context?.fetch(fetchReq)
+            st = stu?.first as! [ScoreHolder]
+        }
+        catch{
+            print("cannot fetch the data")
+        }
+        return st
+        
+    }
+    
+    func getScoreDataOneGeneral(name : String)->[ScoreHolder]{
+        var st = [ScoreHolder]()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "ScoreHolder")
+        print("Fetched")
+        fetchReq.predicate = NSPredicate(format: "user == %@", name)
+        print("Predicated")
+        
+        do{
+            
+            let stu = try context?.fetch(fetchReq)
+            st = stu?.first as! [ScoreHolder]
+        }
+        catch{
+            print("cannot fetch the data")
+        }
+        return st
+        
     }
     
     func getQuiz()-> [Quiz]{

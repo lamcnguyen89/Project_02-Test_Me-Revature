@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:ScoreHolder+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ScoreHolder+CoreDataProperties.swift">
+   </FileRef>
    <Group
       location = "container:"
       name = "Design Documents">
