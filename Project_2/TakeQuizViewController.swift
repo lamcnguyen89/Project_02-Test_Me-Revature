@@ -15,6 +15,7 @@ class TakeQuizViewController: UIViewController {
     var quizCheck : Quiz?
     var container : [Question]?
     var questionCount = 0
+    var answerPicked = ""
     
 
 
@@ -38,22 +39,34 @@ class TakeQuizViewController: UIViewController {
     
     @IBAction func choiceA(_ sender: Any) {
         messageLabel.text = "Choice A was selected"
+        answerPicked = (container?[questionCount].ans1!)!
     }
     
     @IBAction func choiceB(_ sender: Any) {
         messageLabel.text = "Choice B was selected"
+        answerPicked = (container?[questionCount].ans2!)!
+        
     }
     
     @IBAction func choiceC(_ sender: Any) {
         messageLabel.text = "Choice C was selected"
+        answerPicked = (container?[questionCount].ans3!)!
+        
     }
     
     @IBAction func choiceD(_ sender: Any) {
         messageLabel.text = "Choice D was selected"
+        answerPicked = (container?[questionCount].ans4!)!
+        
     }
     
     @IBAction func submitAnswer(_ sender: Any) {
         messageLabel.text = "Submit button was pressed"
+        
+        if answerPicked == container?[questionCount].cans{
+            //var user = DBHelper.inst.getData().
+        }
+        questionCount = questionCount + 1
         
     }
     
@@ -75,7 +88,8 @@ class TakeQuizViewController: UIViewController {
         choiceBLabel.setTitle(first?.ans2, for: .normal)
         choiceCLabel.setTitle(first?.ans3, for: .normal)
         choiceDLabel.setTitle(first?.ans4, for: .normal)
-        questionCount = questionCount + 1
+        
+        
         
     }
 
