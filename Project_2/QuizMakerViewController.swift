@@ -63,11 +63,11 @@ class QuizMakerViewController: UIViewController {
                 }
                 print("Attempting Retrieval Same Size")
                 var quizcheck = DBHelper.inst.getOneQuiz(quiz: name.text!)
-                var container = quizcheck.ztoq?.allObjects
-                for printer in container!{
+                var container = quizcheck.ztoq?.allObjects as! [Question]
+                for printer in container{
                     print(printer)
                 }
-                    }
+            }
     }
     }
     
