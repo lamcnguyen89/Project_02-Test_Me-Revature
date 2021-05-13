@@ -11,6 +11,12 @@ import UIKit
 import DLRadioButton
 
 class TakeQuizViewController: UIViewController {
+    var quizName = DBHelper.inst.getCurrentQuiz()
+    var quizCheck : Quiz?
+    var container : [Question]?
+    var questionCount = 0
+    
+
 
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -58,15 +64,21 @@ class TakeQuizViewController: UIViewController {
     
     // Function to Load the question from the database
     func loadQuestion() {
+        print(quizName)
         
-        var data = ["Which of these is a fruit?","Apple","Cat","Cactus","Tomato","Avocado"]
+        quizCheck = DBHelper.inst.getOneQuiz(quiz: quizName)
+        container = quizCheck?.ztoq?.allObjects as! [Question]
+        var first = container?.first
         
-        questionLabel.text = data[0]
-        choiceALabel.setTitle(data[1], for: .normal)
-        choiceBLabel.setTitle(data[2], for: .normal)
-        choiceCLabel.setTitle(data[3], for: .normal)
-        choiceDLabel.setTitle(data[4], for: .normal)
+        questionLabel.text = first?.questions
+        choiceALabel.setTitle(first?.ans1, for: .normal)
+        choiceBLabel.setTitle(first?.ans2, for: .normal)
+        choiceCLabel.setTitle(first?.ans3, for: .normal)
+        choiceDLabel.setTitle(first?.ans4, for: .normal)
+        questionCount = questionCount + 1
+        
     }
 
+    
 
 }
