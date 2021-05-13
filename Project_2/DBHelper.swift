@@ -11,6 +11,7 @@ import UIKit
 
 class DBHelper{
     var current = ""
+    var currentQuiz = ""
     static var inst = DBHelper()
     
     static var dataCheck = false
@@ -145,6 +146,19 @@ class DBHelper{
         return stu
     }
     
+    func getQuiz()-> [Quiz]{
+        var stu = [Quiz]()
+        var fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Quiz")
+        do{
+            stu = try context?.fetch(fetchReq) as!
+     [Quiz]
+        }
+        catch{
+            print("cannot fetch the data")
+        }
+        return stu
+    }
+    
     func getDataQuestions()-> [Question]{
         var stu = [Question]()
         var fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
@@ -184,4 +198,10 @@ class DBHelper{
         return current;
     }
     
+    func holdCurrentQuiz(name : String){
+        currentQuiz = name
+    }
+    func getCurrentQuiz() -> String {
+        return currentQuiz;
+    }
 }
