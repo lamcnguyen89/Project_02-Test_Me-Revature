@@ -11,7 +11,10 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     //var userDict:[String:String] = [:]
     var user = [String]()
-    var selected = ""
+    var scoreArray = [Double]()
+    var scoreArray2 = [Double]()
+    static var selected = 0
+    var blockArray = [Bool]()
     let data = DBHelper.inst.getData()
     
     
@@ -23,53 +26,42 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         return user.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print(user[row])
         return user[row]
         
     }
  
-    /*
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selected = user[row]
+        AdminViewController.selected = row
+        score.text = String(scoreArray[row])
+        score2.text = String(scoreArray2[row])
         print(user[row])
     }
- */
+ 
  
     
-
+    @IBOutlet weak var score2: UILabel!
+    
     @IBOutlet weak var score: UILabel!
     
     @IBOutlet weak var quizName: UITextField!
     
-    @IBOutlet weak var question: UITextField!
     
     @IBAction func blockUser(_ sender: Any) {
+        blockArray[AdminViewController.selected] = true
+        print(user[AdminViewController.selected], " blocked!")
         
     }
-    
-    @IBAction func nextQuestion(_ sender: Any) {
-        
-    }
-    
-    
-    @IBAction func saveChanges(_ sender: Any) {
-        
-        
-    }
-    
-    
-    @IBOutlet weak var answer: UITextField!
-    
-    @IBOutlet weak var numberOfQuestions: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
           for st in data{
-              // userDict[st.username!] = st.password
-              user.append(st.username!)
+            scoreArray.append(st.score)
+            scoreArray2.append(st.score2)
+            blockArray.append(st.block)
+            user.append(st.username!)
           }
         // Do any additional setup after loading the view.
     }

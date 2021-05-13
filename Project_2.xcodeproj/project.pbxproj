@@ -10,6 +10,7 @@
 		84AF9B6E2649D39C00AA28B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9B6D2649D39B00AA28B1 /* LoginViewController.swift */; };
 		84AF9B74264ADC6200AA28B1 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9B73264ADC6200AA28B1 /* AdminViewController.swift */; };
 		84AF9B77264ADC7500AA28B1 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9B76264ADC7500AA28B1 /* UserViewController.swift */; };
+		84AF9BB7264C814100AA28B1 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9BB6264C814100AA28B1 /* ForgetPasswordViewController.swift */; };
 		84BFD83B2649911E001DB459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFD83A2649911E001DB459 /* AppDelegate.swift */; };
 		84BFD83D2649911E001DB459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFD83C2649911E001DB459 /* SceneDelegate.swift */; };
 		84BFD83F2649911E001DB459 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFD83E2649911E001DB459 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		84AF9B6D2649D39B00AA28B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84AF9B73264ADC6200AA28B1 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		84AF9B76264ADC7500AA28B1 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		84AF9BB6264C814100AA28B1 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		84BFD8372649911E001DB459 /* Project_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BFD83A2649911E001DB459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BFD83C2649911E001DB459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				84EE352B264B8907002AED57 /* SignUpViewController.swift */,
 				84EE352E264B8C71002AED57 /* QuestionMakerViewController.swift */,
 				84EE3534264C3128002AED57 /* QuizMakerViewController.swift */,
+				84AF9BB6264C814100AA28B1 /* ForgetPasswordViewController.swift */,
 			);
 			path = Project_2;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AF9B74264ADC6200AA28B1 /* AdminViewController.swift in Sources */,
+				84AF9BB7264C814100AA28B1 /* ForgetPasswordViewController.swift in Sources */,
 				84AF9B77264ADC7500AA28B1 /* UserViewController.swift in Sources */,
 				84BFD83F2649911E001DB459 /* ViewController.swift in Sources */,
 				84BFD83B2649911E001DB459 /* AppDelegate.swift in Sources */,
