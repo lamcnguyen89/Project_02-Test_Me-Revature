@@ -1,16 +1,20 @@
 PODS:
+  - DLRadioButton (1.4.12)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
   - SideMenu
 
 SPEC REPOS:
   trunk:
+    - DLRadioButton
     - SideMenu
 
 SPEC CHECKSUMS:
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 6d248d39d873874e05b90112a1e19ff2dbf50b2d
+PODFILE CHECKSUM: efdba8451901a1076f68acbcabb5ebc1e3ca2ed0
 
 COCOAPODS: 1.10.1
