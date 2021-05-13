@@ -77,6 +77,14 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBAction func deletetion(_ sender: Any) {
         DBHelper.inst.clearData()
     }
+    @IBAction func scoresViewer(_ sender: Any) {
+       var data = DBHelper.inst.getScoreData()
+        
+        for i in data {
+            print(i.user! + " On Quiz: " + i.quiz!)
+            print("Score: " + String(i.score))
+        }
+    }
     /*
     // MARK: - Navigation
 

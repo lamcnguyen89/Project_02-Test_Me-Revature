@@ -45,6 +45,8 @@ class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewD
             quizNames.append(st.name!)
         }
         
+        DBHelper.inst.holdCurrentQuiz(name: quizNames[0])
+        
     }
     
 
