@@ -38,6 +38,19 @@ class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]){
+            (granted, error) in
+            if granted {
+                print("yes")
+            }
+            else{
+                print("no", error)
+            }
+            
+        }
+        
+        
         user.text = "Welcome " +  DBHelper.inst.current
         // Do any additional setup after loading the view.
         
