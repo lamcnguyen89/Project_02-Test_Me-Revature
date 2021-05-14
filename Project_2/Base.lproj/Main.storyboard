@@ -478,6 +478,66 @@
             </objects>
             <point key="canvasLocation" x="3382.608695652174" y="714.50892857142856"/>
         </scene>
+        <!--Ranking View Controller-->
+        <scene sceneID="qyN-aO-5Wf">
+            <objects>
+                <viewController id="NtG-Xm-xoM" customClass="RankingViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lsW-qo-kGw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ms7-Bw-BTl">
+                                <rect key="frame" x="50" y="170" width="314" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpP-Xm-StP">
+                                <rect key="frame" x="50" y="270" width="314" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggW-u4-cKY">
+                                <rect key="frame" x="50" y="363" width="314" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ot-5S-9z4">
+                                <rect key="frame" x="162" y="584" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next Ranking"/>
+                                <connections>
+                                    <action selector="next:" destination="NtG-Xm-xoM" eventType="touchUpInside" id="5u0-lM-jup"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quiz Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JK-GO-6u6">
+                                <rect key="frame" x="110" y="66" width="185" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GVv-jd-MbL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="axw-cn-Db6"/>
+                    <connections>
+                        <outlet property="Quiz" destination="9JK-GO-6u6" id="Zya-CJ-dDM"/>
+                        <outlet property="Rank1" destination="ms7-Bw-BTl" id="nDN-Jy-x2d"/>
+                        <outlet property="Rank2" destination="EpP-Xm-StP" id="ruK-vV-3LK"/>
+                        <outlet property="Rank3" destination="ggW-u4-cKY" id="4Ax-kb-mnP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVi-8s-nyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4251" y="727"/>
+        </scene>
         <!--Admin View Controller-->
         <scene sceneID="md5-MB-lni">
             <objects>
@@ -567,6 +627,14 @@
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="Yuk-j1-qOH" kind="show" id="hbO-yu-ku6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhI-20-RQp">
+                                <rect key="frame" x="177" y="396" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rankings"/>
+                                <connections>
+                                    <segue destination="NtG-Xm-xoM" kind="show" id="aeb-Yg-wrI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -807,7 +875,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="m4p-Sj-vEH"/>
-        <segue reference="PZ8-XB-NmY"/>
+        <segue reference="hbO-yu-ku6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

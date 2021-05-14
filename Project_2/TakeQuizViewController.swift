@@ -82,10 +82,9 @@ class TakeQuizViewController: UIViewController {
     
     @IBAction func submitAnswer(_ sender: Any) {
         
-        print(answerPicked)
-        print((container?[questionCount].cans)!)
+ 
         if answerPicked.elementsEqual((container?[questionCount].cans)!){
-            TakeQuizViewController.score = TakeQuizViewController.score + 33
+            TakeQuizViewController.score = TakeQuizViewController.score + Double((100 / container!.count))
             print(String(TakeQuizViewController.score))
             scorel.text = "Score: " + String(TakeQuizViewController.score)
         }
