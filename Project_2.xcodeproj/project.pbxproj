@@ -35,6 +35,7 @@
 		DE1F407C264EE99A0076CDB1 /* Question+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F407B264EE99A0076CDB1 /* Question+CoreDataProperties.swift */; };
 		DE1F407F264EE99D0076CDB1 /* ScoreHolder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F407E264EE99D0076CDB1 /* ScoreHolder+CoreDataClass.swift */; };
 		DE1F4082264EE9A40076CDB1 /* ScoreHolder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F4081264EE9A40076CDB1 /* ScoreHolder+CoreDataProperties.swift */; };
+		DE1F40ED264F177B0076CDB1 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */; };
 		DEA96FF2264CBFF3000A1A73 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA96FF1264CBFF3000A1A73 /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		DE1F407B264EE99A0076CDB1 /* Question+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Question+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DE1F407E264EE99D0076CDB1 /* ScoreHolder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreHolder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DE1F4081264EE9A40076CDB1 /* ScoreHolder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreHolder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		DEA96FF1264CBFF3000A1A73 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		E317369B4B6EA56610CB5A97 /* Pods-Project_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_2.release.xcconfig"; path = "Target Support Files/Pods-Project_2/Pods-Project_2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				DE14BF91264CECBD00CF7825 /* TakeQuizViewController.swift */,
 				84DE6A1E264ECCA400B7E63D /* SubViewController.swift */,
 				84DE6A67264F01E100B7E63D /* RankingViewController.swift */,
+				DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */,
 			);
 			path = Project_2;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AF9B74264ADC6200AA28B1 /* AdminViewController.swift in Sources */,
+				DE1F40ED264F177B0076CDB1 /* CreditCardViewController.swift in Sources */,
 				84AF9BB7264C814100AA28B1 /* ForgetPasswordViewController.swift in Sources */,
 				DE1F4079264EE9910076CDB1 /* Question+CoreDataClass.swift in Sources */,
 				84AF9B77264ADC7500AA28B1 /* UserViewController.swift in Sources */,
