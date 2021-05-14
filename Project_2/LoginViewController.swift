@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+
 
 class LoginViewController: UIViewController {
     let ud = UserDefaults.standard
@@ -102,6 +104,23 @@ class LoginViewController: UIViewController {
         print("Data Displayed",userName.text!, pass.text!)    }
     
     override func viewDidLoad() {
+        if let token = AccessToken.current,
+            !token.isExpired {
+            // User is logged in, do work such as go to next view controller.
+        }
+        
+        let loginButton = FBLoginButton()
+        loginButton.center = view.center
+        loginButton.center.y = 800
+        view.addSubview(loginButton)
+        
+        
+        // Swift
+        //
+        // Extend the code sample from 6a. Add Facebook Login to Your Code
+        // Add to your viewDidLoad method:
+        loginButton.permissions = ["public_profile", "email"]
+        
         super.viewDidLoad()
         LoginViewController.state = ud.bool(forKey: "state")
         diff.setOn(LoginViewController.state, animated: true)
