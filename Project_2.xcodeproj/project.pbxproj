@@ -34,6 +34,10 @@
 		CB5DF08E434D9DFAC566D559 /* Pods_Project_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6EA4196F56951CA363818B /* Pods_Project_2.framework */; };
 		DE14B42E264B737E00E9D5B1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14B42D264B737E00E9D5B1 /* WelcomeViewController.swift */; };
 		DE14BF92264CECBD00CF7825 /* TakeQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14BF91264CECBD00CF7825 /* TakeQuizViewController.swift */; };
+		DE1F4026264ED5DD0076CDB1 /* ScoreHolder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F4025264ED5DC0076CDB1 /* ScoreHolder+CoreDataProperties.swift */; };
+		DE1F4029264ED5E40076CDB1 /* ScoreHolder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F4028264ED5E40076CDB1 /* ScoreHolder+CoreDataClass.swift */; };
+		DE1F402D264ED65F0076CDB1 /* Question+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F402C264ED65F0076CDB1 /* Question+CoreDataProperties.swift */; };
+		DE1F4030264ED6620076CDB1 /* Question+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F402F264ED6620076CDB1 /* Question+CoreDataClass.swift */; };
 		DEA96FF2264CBFF3000A1A73 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA96FF1264CBFF3000A1A73 /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,10 @@
 		84EE3534264C3128002AED57 /* QuizMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMakerViewController.swift; sourceTree = "<group>"; };
 		DE14B42D264B737E00E9D5B1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DE14BF91264CECBD00CF7825 /* TakeQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeQuizViewController.swift; sourceTree = "<group>"; };
+		DE1F4025264ED5DC0076CDB1 /* ScoreHolder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ScoreHolder+CoreDataProperties.swift"; path = "/Users/lamnguyen/Documents/Project_02-Test_Me-Revature/ScoreHolder+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		DE1F4028264ED5E40076CDB1 /* ScoreHolder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ScoreHolder+CoreDataClass.swift"; path = "/Users/lamnguyen/Documents/Project_02-Test_Me-Revature/ScoreHolder+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		DE1F402C264ED65F0076CDB1 /* Question+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Question+CoreDataProperties.swift"; path = "/Users/lamnguyen/Documents/Project_02-Test_Me-Revature/Question+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		DE1F402F264ED6620076CDB1 /* Question+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Question+CoreDataClass.swift"; path = "/Users/lamnguyen/Documents/Project_02-Test_Me-Revature/Question+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		DEA96FF1264CBFF3000A1A73 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		E317369B4B6EA56610CB5A97 /* Pods-Project_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_2.release.xcconfig"; path = "Target Support Files/Pods-Project_2/Pods-Project_2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,14 +103,13 @@
 		84BFD82E2649911E001DB459 = {
 			isa = PBXGroup;
 			children = (
+
 				84522C18264ED481005CB190 /* ScoreHolder+CoreDataProperties.swift */,
 				84522C15264ED47C005CB190 /* ScoreHolder+CoreDataClass.swift */,
 				84EE3521264B329D002AED57 /* Quiz+CoreDataClass.swift */,
 				84EE3522264B329D002AED57 /* Quiz+CoreDataProperties.swift */,
 				84BFD8D02649CC71001DB459 /* User+CoreDataClass.swift */,
 				84BFD8D12649CC71001DB459 /* User+CoreDataProperties.swift */,
-				84BFD8D22649CC71001DB459 /* Question+CoreDataClass.swift */,
-				84BFD8D32649CC71001DB459 /* Question+CoreDataProperties.swift */,
 				84BFD8392649911E001DB459 /* Project_2 */,
 				84BFD8382649911E001DB459 /* Products */,
 				A6EEA32B4A5A343054AACE34 /* Pods */,
@@ -268,6 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1F4029264ED5E40076CDB1 /* ScoreHolder+CoreDataClass.swift in Sources */,
+				DE1F402D264ED65F0076CDB1 /* Question+CoreDataProperties.swift in Sources */,
 				84AF9B74264ADC6200AA28B1 /* AdminViewController.swift in Sources */,
 				84AF9BB7264C814100AA28B1 /* ForgetPasswordViewController.swift in Sources */,
 				84AF9B77264ADC7500AA28B1 /* UserViewController.swift in Sources */,
@@ -277,8 +286,8 @@
 				84BFD83B2649911E001DB459 /* AppDelegate.swift in Sources */,
 				DE14BF92264CECBD00CF7825 /* TakeQuizViewController.swift in Sources */,
 				84BFD8D42649CC71001DB459 /* User+CoreDataClass.swift in Sources */,
-				84BFD8D62649CC71001DB459 /* Question+CoreDataClass.swift in Sources */,
 				DE14B42E264B737E00E9D5B1 /* WelcomeViewController.swift in Sources */,
+				DE1F4030264ED6620076CDB1 /* Question+CoreDataClass.swift in Sources */,
 				84EE3524264B329D002AED57 /* Quiz+CoreDataProperties.swift in Sources */,
 				84BFD8D72649CC71001DB459 /* Question+CoreDataProperties.swift in Sources */,
 				84522C16264ED47C005CB190 /* ScoreHolder+CoreDataClass.swift in Sources */,

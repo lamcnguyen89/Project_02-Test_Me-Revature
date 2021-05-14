@@ -2,7 +2,7 @@
 //  Question+CoreDataProperties.swift
 //  
 //
-//  Created by admin on 5/12/21.
+//  Created by Lam Nguyen on 5/14/21.
 //
 //
 
