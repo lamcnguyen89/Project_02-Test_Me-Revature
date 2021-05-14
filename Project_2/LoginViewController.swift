@@ -114,6 +114,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         if let token = AccessToken.current,
             !token.isExpired {
+            
+            let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
+            present(redir, animated:true, completion: nil)
+        
+            
             // User is logged in, do work such as go to next view controller.
         }
         
