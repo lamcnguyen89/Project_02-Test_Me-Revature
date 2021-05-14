@@ -33,8 +33,11 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         AdminViewController.selected = row
-//        score.text = String(scoreArray[row])
+        print(row)
         print(user[row])
+        score.text = String(scoreArray[row])
+       // score.text = String(scoreArray[row])
+       
        
     }
  
@@ -58,10 +61,25 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         var data1 = DBHelper.inst.getScoreData()
+        var adder = 0
+        var k = 0
          
-         for i in data1 {
-            scoreArray.append(i.score)
-            
+        for j in data{
+            if j.username?.isEmpty == false{
+                adder += 1
+                scoreArray.append(0.0)
+                
+            }
+        }
+        
+        print(adder)
+        
+        
+        for i in data1{
+            if i.score != 0.0{
+                scoreArray[k] = i.score
+                k += 1
+            }
              
          }
         

@@ -49,21 +49,24 @@ class LoginViewController: UIViewController {
         }
         
         for (i,v) in LoginViewController.GlobalVariable.userDict{
-            if(userName.text! == i && pass.text! == v){
-                var user = DBHelper.inst.getOneUser(user: userName.text!)
-                if user.block == false{
+            var user = DBHelper.inst.getOneUser(user: userName.text!)
+            if(userName.text! == i && pass.text! == v && user.block == false){
                     LoginViewController.GlobalVariable.us = userName.text!
                     LoginViewController.GlobalVariable.p = pass.text!
                     DBHelper.inst.holdCurrentUser(name: userName.text!)
                     let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
                     present(redir, animated:true, completion: nil)
-                } else {
-                    msg.text = "User is blocked, please contact an admin"
-                }
+                
             }
             else{
-                msg.text = "Wrong User ID or Password"
-                //print("Wrong USer Id or Password")
+                if user.block == true{
+                    msg.text = "User is blocked, please contact an admin"
+                    
+                }
+                else{
+                    msg.text = "Wrong User ID or Password"
+                }
+               
             }
         }
         
