@@ -2,7 +2,7 @@
 //  ScoreHolder+CoreDataProperties.swift
 //  
 //
-//  Created by admin on 5/13/21.
+//  Created by Lam Nguyen on 5/14/21.
 //
 //
 

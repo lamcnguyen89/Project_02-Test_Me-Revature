@@ -1,8 +1,8 @@
 //
 //  Question+CoreDataClass.swift
-//  Project_2
+//  
 //
-//  Created by admin on 5/10/21.
+//  Created by Lam Nguyen on 5/14/21.
 //
 //
 
