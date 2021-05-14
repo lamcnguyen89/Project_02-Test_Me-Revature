@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ScoreHolder+CoreDataClass.swift">
+      location = "group:/Users/admin/Desktop/Project2/Project_02-Test_Me-Revature/ScoreHolder+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:ScoreHolder+CoreDataProperties.swift">
+      location = "group:/Users/admin/Desktop/Project2/Project_02-Test_Me-Revature/ScoreHolder+CoreDataProperties.swift">
    </FileRef>
    <Group
       location = "container:"

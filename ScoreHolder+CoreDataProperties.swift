@@ -16,8 +16,8 @@ extension ScoreHolder {
         return NSFetchRequest<ScoreHolder>(entityName: "ScoreHolder")
     }
 
-    @NSManaged public var user: String?
     @NSManaged public var quiz: String?
     @NSManaged public var score: Double
+    @NSManaged public var user: String?
 
 }

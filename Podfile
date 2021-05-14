@@ -8,5 +8,6 @@ target 'Project_2' do
   # Pods for Project_2
   pod 'SideMenu'
   pod 'DLRadioButton', '~> 1.4' 
-
+  pod 'FBSDKLoginKit'
+    
 end

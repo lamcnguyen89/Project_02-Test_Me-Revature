@@ -36,6 +36,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         score.text = String(scoreArray[row])
         score2.text = String(scoreArray2[row])
         print(user[row])
+       
     }
  
  
@@ -44,7 +45,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBOutlet weak var score: UILabel!
     
-    @IBOutlet weak var quizName: UITextField!
+   
     
     
     @IBAction func blockUser(_ sender: Any) {
@@ -55,10 +56,16 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var data1 = DBHelper.inst.getScoreData()
+         
+         for i in data1 {
+            scoreArray.append(i.score)
+            
+             
+         }
         
           for st in data{
-            scoreArray.append(st.score)
+            
             scoreArray2.append(st.score2)
             blockArray.append(st.block)
             user.append(st.username!)
@@ -66,6 +73,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // Do any additional setup after loading the view.
     }
     
+    /*
     @IBAction func questionsActive(_ sender: Any) {
        var questions = DBHelper.inst.getDataQuestions()
         
@@ -73,10 +81,12 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             print(questions.questions)
         }
     }
+ */
     
     @IBAction func deletetion(_ sender: Any) {
         DBHelper.inst.clearData()
     }
+    /*
     @IBAction func scoresViewer(_ sender: Any) {
        var data = DBHelper.inst.getScoreData()
         
@@ -84,7 +94,9 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             print(i.user! + " On Quiz: " + i.quiz!)
             print("Score: " + String(i.score))
         }
+ 
     }
+ */
     /*
     // MARK: - Navigation
 
