@@ -89,6 +89,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             blockArray.append(st.block)
             user.append(st.username!)
           }
+        
         // Do any additional setup after loading the view.
     }
     
