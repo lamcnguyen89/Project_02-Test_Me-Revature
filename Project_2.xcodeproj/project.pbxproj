@@ -22,6 +22,7 @@
 		84BFD8D42649CC71001DB459 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFD8D02649CC71001DB459 /* User+CoreDataClass.swift */; };
 		84BFD8D52649CC71001DB459 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFD8D12649CC71001DB459 /* User+CoreDataProperties.swift */; };
 		84DE6A1F264ECCA400B7E63D /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6A1E264ECCA400B7E63D /* SubViewController.swift */; };
+		84DE6A68264F01E100B7E63D /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6A67264F01E100B7E63D /* RankingViewController.swift */; };
 		84EE3523264B329D002AED57 /* Quiz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE3521264B329D002AED57 /* Quiz+CoreDataClass.swift */; };
 		84EE3524264B329D002AED57 /* Quiz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE3522264B329D002AED57 /* Quiz+CoreDataProperties.swift */; };
 		84EE352C264B8907002AED57 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE352B264B8907002AED57 /* SignUpViewController.swift */; };
@@ -57,6 +58,7 @@
 		84BFD8D02649CC71001DB459 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84BFD8D12649CC71001DB459 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84DE6A1E264ECCA400B7E63D /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
+		84DE6A67264F01E100B7E63D /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		84EE3521264B329D002AED57 /* Quiz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84EE3522264B329D002AED57 /* Quiz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84EE352B264B8907002AED57 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				DEA96FF1264CBFF3000A1A73 /* Appearance.swift */,
 				DE14BF91264CECBD00CF7825 /* TakeQuizViewController.swift */,
 				84DE6A1E264ECCA400B7E63D /* SubViewController.swift */,
+				84DE6A67264F01E100B7E63D /* RankingViewController.swift */,
 			);
 			path = Project_2;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				DE1F4079264EE9910076CDB1 /* Question+CoreDataClass.swift in Sources */,
 				84AF9B77264ADC7500AA28B1 /* UserViewController.swift in Sources */,
 				DE1F4082264EE9A40076CDB1 /* ScoreHolder+CoreDataProperties.swift in Sources */,
+				84DE6A68264F01E100B7E63D /* RankingViewController.swift in Sources */,
 				84DE6A1F264ECCA400B7E63D /* SubViewController.swift in Sources */,
 				DE1F407C264EE99A0076CDB1 /* Question+CoreDataProperties.swift in Sources */,
 				84BFD83F2649911E001DB459 /* ViewController.swift in Sources */,

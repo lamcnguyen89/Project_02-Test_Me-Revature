@@ -77,7 +77,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         for i in data1{
             if i.score != 0.0{
-                scoreArray[k] = i.score
+//                scoreArray[k] = i.score
                 k += 1
             }
              
