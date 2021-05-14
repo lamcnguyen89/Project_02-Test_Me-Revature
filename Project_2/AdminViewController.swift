@@ -33,8 +33,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         AdminViewController.selected = row
-        score.text = String(scoreArray[row])
-        score2.text = String(scoreArray2[row])
+//        score.text = String(scoreArray[row])
         print(user[row])
        
     }
@@ -50,6 +49,8 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBAction func blockUser(_ sender: Any) {
         blockArray[AdminViewController.selected] = true
+        var users = user[AdminViewController.selected]
+        DBHelper.inst.updateBlock(object: users)
         print(user[AdminViewController.selected], " blocked!")
         
     }

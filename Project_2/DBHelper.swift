@@ -187,7 +187,53 @@ class DBHelper{
         
     }
     
+    func updateBlock(object : String){
+        
+        var st = User()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "username == %@", object)
+        
+        do{
+            let stu = try context?.fetch(fetchReq)
+            
+            if(stu?.count != 0){
+                st = stu?.first as! User
+                st.block = true
+                try context?.save()
+                
+            }
+            
+        }
+        catch{
+            print("Error")
+        }
+        
+    }
     func updateDataScore(username : String, object : Double){
+        print("Here")
+        var st = User()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "username == %@", username)
+        
+        do{
+            let stu = try context?.fetch(fetchReq)
+            
+            if(stu?.count != 0){
+                print("I should also be here")
+                st = stu?.first as! User
+                st.score = object
+                try context?.save()
+                
+            }
+            
+        }
+        catch{
+            print("Error")
+        }
+        
+    }
+    
+    func updateQtaken(username : String){
         
         var st = User()
         var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
@@ -198,7 +244,6 @@ class DBHelper{
             
             if(stu?.count != 0){
                 st = stu?.first as! User
-                st.score = object
                 st.qtaken = st.qtaken + 1
                 try context?.save()
                 

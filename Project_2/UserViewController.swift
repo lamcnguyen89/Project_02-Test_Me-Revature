@@ -50,6 +50,22 @@ class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewD
     }
     
 
+    @IBAction func quiz(_ sender: Any) {
+        var user = DBHelper.inst.getOneUser(user: DBHelper.inst.current)
+        print(String(user.qtaken))
+        print(user.subtype)
+        if user.subtype == false && user.qtaken > 2.0{
+            var sb = UIStoryboard(name: "Main", bundle: nil)
+            var wel = sb.instantiateViewController(withIdentifier: "free") as! UIViewController
+            self.present(wel, animated: true, completion: nil)
+        } else {
+            var sb = UIStoryboard(name: "Main", bundle: nil)
+            var wel = sb.instantiateViewController(withIdentifier: "Quiz") as! UIViewController
+            self.present(wel, animated: true, completion: nil)
+            
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -68,7 +68,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIl-AL-aFU">
-                                <rect key="frame" x="180" y="44" width="42" height="41"/>
+                                <rect key="frame" x="38" y="44" width="325" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -454,6 +454,30 @@
             </objects>
             <point key="canvasLocation" x="2515.9420289855075" y="714.50892857142856"/>
         </scene>
+        <!--Sub View Controller-->
+        <scene sceneID="8bV-E5-J0U">
+            <objects>
+                <viewController storyboardIdentifier="free" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q47-oC-GEj" customClass="SubViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K3F-O4-xNY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are a free user, to take more quizzes you must buy a subcription." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd9-OK-Yqj">
+                                <rect key="frame" x="56" y="93" width="292" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PQX-Wr-Ofz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Yu-ca-FgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3382.608695652174" y="714.50892857142856"/>
+        </scene>
         <!--Admin View Controller-->
         <scene sceneID="md5-MB-lni">
             <objects>
@@ -594,7 +618,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take Quiz"/>
                                 <connections>
-                                    <segue destination="dlz-SZ-Lau" kind="show" id="Hoe-Lj-cm7"/>
+                                    <action selector="quiz:" destination="mUt-qX-6Xk" eventType="touchUpInside" id="RY3-Mv-uYR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ein-30-YS7">
@@ -644,7 +668,7 @@
             <objects>
                 <viewController id="x3F-f1-8tD" customClass="TakeQuizViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3lv-PW-Frd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JML-t6-KMj">
@@ -764,11 +788,11 @@
         <!--Navigation Controller-->
         <scene sceneID="Hjb-GZ-jz7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dlz-SZ-Lau" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Quiz" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dlz-SZ-Lau" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="oms-w3-hUk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gl9-kI-Z16">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -783,7 +807,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="m4p-Sj-vEH"/>
-        <segue reference="vbf-Bh-wtv"/>
+        <segue reference="PZ8-XB-NmY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
