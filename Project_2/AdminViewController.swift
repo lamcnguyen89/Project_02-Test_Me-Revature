@@ -9,6 +9,10 @@ import UIKit
 
 class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    
+    
+    
+    
     //var userDict:[String:String] = [:]
     var user = [String]()
     var scoreArray = [Double]()
@@ -40,7 +44,9 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
        
        
     }
- 
+    
+    
+    
  
     
     @IBOutlet weak var score2: UILabel!
@@ -60,6 +66,9 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         var data1 = DBHelper.inst.getScoreData()
         var adder = 0
         var k = 0
@@ -77,7 +86,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         for i in data1{
             if i.score != 0.0{
-//                scoreArray[k] = i.score
+                scoreArray[k] = i.score
                 k += 1
             }
              
