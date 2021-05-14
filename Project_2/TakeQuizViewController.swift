@@ -94,6 +94,7 @@ class TakeQuizViewController: UIViewController {
         questionCount = questionCount + 1
         if questionCount == container?.count {
             var current = DBHelper.inst.getCurrentUser()
+            DBHelper.inst.updateQtaken(username : current)
             print("Here getting something")
             var user = DBHelper.inst.getOneUser(user: current)
             
