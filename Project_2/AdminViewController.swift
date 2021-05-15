@@ -116,9 +116,9 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let dic = ["ans1" : "A single use variable", "ans2" : "An array", "ans3" : "A blueprint for a class", "ans4" : "None of the above", "cans" : "A blueprint for a class"]
         DBHelper.inst.addDataQuestions(qid: "Swift", choices: dic, questionAct: "What is a protocol?")
         let dic2 = ["ans1" : "an Android iOS", "ans2" : "an Apple OS", "ans3" : "A Windows OS", "ans4" : "None of the above", "cans" : "an Apple OS"]
-        DBHelper.inst.addDataQuestions(qid: "Swift", choices: dic, questionAct: "What is iOS")
+        DBHelper.inst.addDataQuestions(qid: "Swift", choices: dic2, questionAct: "What is iOS")
         let dic3 = ["ans1" : "Coding language for Java", "ans2" : "A database centered language", "ans3" : "Coding language for Apple Devices", "ans4" : "None of the above", "cans" : "Coding language for Apple Devices"]
-        DBHelper.inst.addDataQuestions(qid: "Swift", choices: dic, questionAct: "What is Swift?")
+        DBHelper.inst.addDataQuestions(qid: "Swift", choices: dic3, questionAct: "What is Swift?")
         
         var questions = DBHelper.inst.getDataQuestions()
         var questionHolder = [Question]()
@@ -129,7 +129,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 questionHolder.append(question)
             }
         }
-        
+        print(questionHolder.count)
         DBHelper.inst.addQuiz(name: "Swift Quiz", questions: 3.0)
         if(questionHolder.count == 3){
             for insertion in questionHolder{
@@ -167,11 +167,11 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
         
         let dic4 = ["ans1" : "Inheritance", "ans2" : "Polymorphism", "ans3" : "Abstraction", "ans4" : "Severance", "cans" : "Severance"]
-        DBHelper.inst.addDataQuestions(qid: "Java", choices: dic, questionAct: "Which choice is not a pillar of OOP?")
+        DBHelper.inst.addDataQuestions(qid: "Java", choices: dic4, questionAct: "Which choice is not a pillar of OOP?")
         let dic5 = ["ans1" : "A variable", "ans2" : "An integer", "ans3" : "A string holder", "ans4" : "None of the above", "cans" : "None of the above"]
-        DBHelper.inst.addDataQuestions(qid: "Java", choices: dic, questionAct: "What is a function?")
+        DBHelper.inst.addDataQuestions(qid: "Java", choices: dic5, questionAct: "What is a function?")
         let dic6 = ["ans1" : "Coding language", "ans2" : "A database", "ans3" : "Coding language for Apple Devices", "ans4" : "None of the above", "cans" : "Coding language"]
-        DBHelper.inst.addDataQuestions(qid: "Java", choices: dic, questionAct: "What is Java?")
+        DBHelper.inst.addDataQuestions(qid: "Java", choices: dic6, questionAct: "What is Java?")
         
         var questions2 = DBHelper.inst.getDataQuestions()
         var questionHolder2 = [Question]()

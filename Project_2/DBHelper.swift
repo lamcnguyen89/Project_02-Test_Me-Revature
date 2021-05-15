@@ -276,6 +276,7 @@ class DBHelper{
             if(stu?.count != 0){
                 st = stu?.first as! User
                 st.taken = true
+                st.qtaken = st.qtaken + 1
                 try context?.save()
                 
             }
