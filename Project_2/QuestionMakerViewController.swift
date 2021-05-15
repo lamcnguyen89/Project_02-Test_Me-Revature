@@ -17,6 +17,7 @@ class QuestionMakerViewController: UIViewController {
     @IBOutlet weak var ChoiceD: UITextField!
     @IBOutlet weak var Correct: UITextField!
     @IBOutlet weak var Qid: UITextField!
+    @IBOutlet weak var msg: UILabel!
     
     
 
@@ -30,11 +31,20 @@ class QuestionMakerViewController: UIViewController {
     @IBAction func Save(_ sender: Any) {
         
         if (ChoiceA.hasText == false || ChoiceB.hasText == false || ChoiceC.hasText == false || ChoiceD.hasText == false || Correct.hasText == false || Qid.hasText == false) {
-            print("Missing a required field, try again")
+            msg.text = "Missing a required field, try again"
         } else {
             let dic = ["ans1" : ChoiceA.text!, "ans2" : ChoiceB.text!, "ans3" : ChoiceC.text!, "ans4" : ChoiceD.text!, "cans" : Correct.text!]
             DBHelper.inst.addDataQuestions(qid: Qid.text!, choices: dic, questionAct: Question.text!)
             
+            msg.text = "Question added!"
+            
+            Question.text = ""
+            ChoiceA.text = ""
+            ChoiceB.text = ""
+            ChoiceC.text = ""
+            ChoiceD.text = ""
+            Correct.text = ""
+            Qid.text = ""
         }
         
     }

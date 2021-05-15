@@ -74,9 +74,8 @@ class MyLongFormLabels: UILabel {
         self.textAlignment = .center
         self.font = UIFont.boldSystemFont(ofSize: 20.0)
         self.numberOfLines = 0
-        self.preferredMaxLayoutWidth = 250
         self.lineBreakMode = NSLineBreakMode.byWordWrapping
-        self.sizeToFit()
+        
         
     }}
 
