@@ -28,7 +28,7 @@ class MyButtons : UIButton {
     required init?(coder: NSCoder) {
         super.init(coder : coder)
         // MyButtons.appearance().backgroundColor = UIColor(red: 85/255 , green: 150/255 ,blue: 100/255 , alpha: 1.0)
-        MyButtons.appearance().backgroundColor = .systemPurple
+        MyButtons.appearance().backgroundColor = .systemGreen
         MyButtons.appearance().contentEdgeInsets = UIEdgeInsets(top: 2, left: 10, bottom: 2, right: 10)
         // MyButtons.appearance().tintColor = UIColor(red: 85/255 , green: 150/255 ,blue: 100/255 , alpha: 1.0)
         MyButtons.appearance().tintColor = .white
@@ -36,8 +36,7 @@ class MyButtons : UIButton {
         self.layer.cornerRadius = 8
         self.layer.masksToBounds = true
         self.titleLabel?.font = UIFont(name: "System", size: 20)
-        self.frame.size.width = 200
-    
+        self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
     
     }
     
@@ -49,7 +48,7 @@ class MyHeadingLabels: UILabel {
     required init?(coder: NSCoder) {
         super.init(coder : coder)
         //MyQuestionLabels.appearance().backgroundColor = UIColor(red: 85/255 , green: 150/255 ,blue: 100/255 , alpha: 1.0)
-        self.textColor = UIColor.white
+        self.textColor = UIColor.systemGreen
         self.textAlignment = .center
         self.font = UIFont.boldSystemFont(ofSize: 35.0)
         
@@ -71,5 +70,11 @@ class MyTextFields : UITextField {
     required init?(coder: NSCoder) {
         super.init(coder : coder)
         // textFieldPlaceholder()
-        self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "placeholder", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "placeholder", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont.systemFont(ofSize:20)
+        ])
+        self.borderStyle = UITextField.BorderStyle.roundedRect
+        self.textAlignment = .center
+        self.font = UIFont.systemFont(ofSize:20)
+        
+    
     }}

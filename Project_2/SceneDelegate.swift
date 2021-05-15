@@ -31,7 +31,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        // Delay the Launch Screen for 2 seconds:
+       window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController() // Sets the first view on the screen to the launchscreen storyboard.
+       window?.makeKeyAndVisible() // Shows the window and makes it the key window
+        
+        // Uses Grand Central Dispatch API to delay instantiating the Main Storyboard that contains the survey by 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        }
         guard let _ = (scene as? UIWindowScene) else { return }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
