@@ -54,6 +54,31 @@ class MyHeadingLabels: UILabel {
         
     }}
 
+// Class to standardize subheading labels
+class MySubHeadingLabels: UILabel {
+    required init?(coder: NSCoder) {
+        super.init(coder : coder)
+        //MyQuestionLabels.appearance().backgroundColor = UIColor(red: 85/255 , green: 150/255 ,blue: 100/255 , alpha: 1.0)
+        self.textColor = UIColor.systemGreen
+        self.textAlignment = .center
+        self.font = UIFont.boldSystemFont(ofSize: 20.0)
+        
+    }}
+
+// Class to standardize subheading labels
+class MyLongFormLabels: UILabel {
+    required init?(coder: NSCoder) {
+        super.init(coder : coder)
+        //MyQuestionLabels.appearance().backgroundColor = UIColor(red: 85/255 , green: 150/255 ,blue: 100/255 , alpha: 1.0)
+        self.textColor = UIColor.systemGreen
+        self.textAlignment = .center
+        self.font = UIFont.boldSystemFont(ofSize: 20.0)
+        self.numberOfLines = 0
+        self.preferredMaxLayoutWidth = 250
+        self.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.sizeToFit()
+        
+    }}
 
 // Class to standardize labels that contain the questions
 class MyQuestionLabels : UILabel {
@@ -72,9 +97,9 @@ class MyTextFields : UITextField {
         // textFieldPlaceholder()
         self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "placeholder", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont.systemFont(ofSize:20)
         ])
-        self.borderStyle = UITextField.BorderStyle.roundedRect
         self.textAlignment = .center
         self.font = UIFont.systemFont(ofSize:20)
+        self.borderStyle = .roundedRect
         
     
     }}
