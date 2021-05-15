@@ -43,7 +43,7 @@ class CreditCardViewController: UIViewController {
             zip.text != nil &&
             phone.text != nil
         ) {
-            
+           print("Card information submitted")
            // let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             //let wel = sb.instantiateViewController(withIdentifier: "Administrator") as! AdministratorViewController
             //self.present(wel, animated: true, completion: nil)
