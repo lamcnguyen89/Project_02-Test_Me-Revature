@@ -4,6 +4,8 @@
 //
 //  Created by Lam Nguyen on 5/11/21.
 //
+
+/*
 import SideMenu
 import UIKit
 
@@ -58,3 +60,5 @@ class MenuListController: UITableViewController {
     }
     
 }
+ 
+ */
