@@ -10,10 +10,19 @@ import FBSDKLoginKit
 
 
 class LoginViewController: UIViewController {
+
+    
+    @IBOutlet weak var msg: UILabel!
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var pass: UITextField!
+    @IBOutlet weak var diff: UISwitch!
+    
     let ud = UserDefaults.standard
     static var state = false
     
-    @IBOutlet weak var msg: UILabel!
+    let data =  DBHelper.inst.getDataQuestions()
+    
+    
     
     struct GlobalVariable{
         static var userDict:[String:String] = [:]
@@ -37,10 +46,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var pass: UITextField!
-    
-    @IBOutlet weak var diff: UISwitch!
     
     @IBAction func login(_ sender: Any) {
         let data = DBHelper.inst.getData()
@@ -48,29 +53,37 @@ class LoginViewController: UIViewController {
             LoginViewController.GlobalVariable.userDict[st.username!] = st.password
         }
         
-        for (i,v) in LoginViewController.GlobalVariable.userDict{
-            var user = DBHelper.inst.getOneUser(user: userName.text!)
-            if(userName.text! == i && pass.text! == v && user.block == false){
-                    LoginViewController.GlobalVariable.us = userName.text!
-                    LoginViewController.GlobalVariable.p = pass.text!
-                    DBHelper.inst.holdCurrentUser(name: userName.text!)
-                    let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
-                    present(redir, animated:true, completion: nil)
+        var user = DBHelper.inst.getOneUser(user: userName.text!)
+        
+        if DBHelper.found == 1 {
+            
+            for (i,v) in LoginViewController.GlobalVariable.userDict{
                 
+                    if(userName.text! == i && pass.text! == v && user.block == false){
+                            LoginViewController.GlobalVariable.us = userName.text!
+                            LoginViewController.GlobalVariable.p = pass.text!
+                            DBHelper.inst.holdCurrentUser(name: userName.text!)
+                            let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
+                            present(redir, animated:true, completion: nil)
+                        
+                    }
+                    else{
+                        
+                        if user.block == true{
+                            msg.text = "User is blocked, please contact an admin"
+                        }
+                        else{
+                            msg.text = "Wrong User ID or Password"
+                        }
+                    }
             }
-            else{
-                if user.block == true{
-                    msg.text = "User is blocked, please contact an admin"
-                    
-                }
-                else{
-                    msg.text = "Wrong User ID or Password"
-                }
-               
-            }
+        } else {
+            
+            msg.text = "Please enter a valid username"
+            
         }
         
-       
+      
     }
     
     
@@ -142,6 +155,8 @@ class LoginViewController: UIViewController {
             
             
         }
+        
+       
     }
 
 }

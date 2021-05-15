@@ -148,16 +148,24 @@ class DBHelper{
         
     }
     
+
+    static var found = 0
     func getOneUser(user : String) -> User{
         
         var st = User()
         var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
         fetchReq.predicate = NSPredicate(format: "username == %@", user)
-        
+        fetchReq.fetchLimit = 1
         do{
-            let stu = try context?.fetch(fetchReq)
-            st = stu?.first as! User
+            let req = try context?.fetch(fetchReq) as! [User]
             
+            if(req.count != 0 ) {
+                st = req.first!
+                
+                DBHelper.found = 1
+            } else {
+                DBHelper.found = 0
+            }
         }
         catch{
             print("Error")
@@ -165,7 +173,7 @@ class DBHelper{
         return st
         
     }
-    
+
     func updateData(object : [String:String]){
         
         var st = User()

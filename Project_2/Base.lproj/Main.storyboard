@@ -370,11 +370,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfO-jv-gYf">
-                                <rect key="frame" x="20" y="651" width="101" height="30"/>
+                                <rect key="frame" x="20" y="627" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="Save:" destination="Byq-XY-2vZ" eventType="touchUpInside" id="Rbc-ty-Kbh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-DK-yIh">
+                                <rect key="frame" x="304" y="627" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="ZjP-ox-PdE" kind="show" id="m4p-Sj-vEH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-XA-9ck">
@@ -390,14 +398,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-DK-yIh">
-                                <rect key="frame" x="254" y="651" width="90" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m42-fH-0rk" customClass="MyLongFormLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="53" y="683" width="312" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="ZjP-ox-PdE" kind="show" id="m4p-Sj-vEH"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C5t-Cd-izE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -411,6 +418,7 @@
                         <outlet property="Correct" destination="1mN-kf-5Va" id="LwU-MI-rz7"/>
                         <outlet property="Qid" destination="GxN-ge-T1g" id="eOA-Nq-iAH"/>
                         <outlet property="Question" destination="aBd-hY-ul7" id="B3M-8F-oc4"/>
+                        <outlet property="msg" destination="m42-fH-0rk" id="wTA-NN-yWY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6SN-xA-KXK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -647,6 +655,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quiz 2 Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRh-dE-zxA">
+                                <rect key="frame" x="260" y="328" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnJ-ap-xqx">
                                 <rect key="frame" x="27" y="345" width="152" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -660,14 +675,6 @@
                                 <state key="normal" title="Create Quiz"/>
                                 <connections>
                                     <segue destination="JdY-HM-dll" kind="show" id="x7w-wG-cqE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5u-HX-P3m" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="130" y="510" width="150" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Questions"/>
-                                <connections>
-                                    <segue destination="Byq-XY-2vZ" kind="show" id="Jgt-En-nUq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0m-nN-Wxd" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
@@ -694,13 +701,14 @@
                                     <segue destination="NtG-Xm-xoM" kind="show" id="aeb-Yg-wrI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quiz 2 Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRh-dE-zxA">
-                                <rect key="frame" x="260" y="328" width="115" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5u-HX-P3m" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="105" y="510" width="200" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Create Questions"/>
+                                <connections>
+                                    <segue destination="Byq-XY-2vZ" kind="show" id="Jgt-En-nUq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PNy-30-XbC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1115,7 +1123,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="m4p-Sj-vEH"/>
-        <segue reference="1L6-Ft-QQq"/>
+        <segue reference="hbO-yu-ku6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Credit Card Logo" width="298" height="34"/>
