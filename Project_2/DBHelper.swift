@@ -130,6 +130,7 @@ class DBHelper{
         
     }
     
+    /*
     func getOneQuiz(quiz : String) -> Quiz{
         
         var st = Quiz()
@@ -147,8 +148,29 @@ class DBHelper{
         return st
         
     }
+ */
     
-
+    func getOneQuiz(quiz : String) -> Quiz{
+        
+        var st = Quiz()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Quiz")
+        fetchReq.predicate = NSPredicate(format: "name == %@", quiz)
+        
+        do{
+            let stu = try context?.fetch(fetchReq) as! [Quiz]
+            
+            if(stu.count != 0) {
+                st = stu.first!
+            }
+            
+        }
+        catch{
+            print("Error")
+        }
+        return st
+        
+    }
+    
     static var found = 0
     func getOneUser(user : String) -> User{
         
