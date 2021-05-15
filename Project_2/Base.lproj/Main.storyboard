@@ -709,6 +709,14 @@
                                     <segue destination="Byq-XY-2vZ" kind="show" id="Jgt-En-nUq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnZ-CZ-hgX">
+                                <rect key="frame" x="174" y="345" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Auto Quiz"/>
+                                <connections>
+                                    <action selector="generateQuiz:" destination="ZjP-ox-PdE" eventType="touchUpInside" id="MVx-0Q-hx9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PNy-30-XbC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
