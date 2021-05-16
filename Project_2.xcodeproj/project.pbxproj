@@ -38,6 +38,7 @@
 		DE36E2092650FBCE002BE1AA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36E2082650FBCE002BE1AA /* FirstViewController.swift */; };
 		DE392E0B2650858400525DD4 /* MenuListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE392E0A2650858400525DD4 /* MenuListController.swift */; };
 		DEA96FF2264CBFF3000A1A73 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA96FF1264CBFF3000A1A73 /* Appearance.swift */; };
+		DEB3050A2651971800CA8BFD /* AdminMenuListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305092651971800CA8BFD /* AdminMenuListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		DE36E2082650FBCE002BE1AA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		DE392E0A2650858400525DD4 /* MenuListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListController.swift; sourceTree = "<group>"; };
 		DEA96FF1264CBFF3000A1A73 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		DEB305092651971800CA8BFD /* AdminMenuListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenuListController.swift; sourceTree = "<group>"; };
 		E317369B4B6EA56610CB5A97 /* Pods-Project_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_2.release.xcconfig"; path = "Target Support Files/Pods-Project_2/Pods-Project_2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				84DE6A67264F01E100B7E63D /* RankingViewController.swift */,
 				DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */,
 				DE392E0A2650858400525DD4 /* MenuListController.swift */,
+				DEB305092651971800CA8BFD /* AdminMenuListController.swift */,
 				DE36E2082650FBCE002BE1AA /* FirstViewController.swift */,
 			);
 			path = Project_2;
@@ -299,6 +302,7 @@
 				84BFD83B2649911E001DB459 /* AppDelegate.swift in Sources */,
 				DE14BF92264CECBD00CF7825 /* TakeQuizViewController.swift in Sources */,
 				84BFD8D42649CC71001DB459 /* User+CoreDataClass.swift in Sources */,
+				DEB3050A2651971800CA8BFD /* AdminMenuListController.swift in Sources */,
 				DE14B42E264B737E00E9D5B1 /* WelcomeViewController.swift in Sources */,
 				84EE3524264B329D002AED57 /* Quiz+CoreDataProperties.swift in Sources */,
 				DE1F407F264EE99D0076CDB1 /* ScoreHolder+CoreDataClass.swift in Sources */,

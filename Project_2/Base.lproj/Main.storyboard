@@ -593,7 +593,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b2-W5-TcH" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
                                 <rect key="frame" x="132" y="604" width="150" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Back to Admin"/>
                                 <connections>
                                     <action selector="backToAdminView:" destination="NtG-Xm-xoM" eventType="touchUpInside" id="sp7-Ui-i94"/>
                                 </connections>
@@ -671,7 +671,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Administrator " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYu-jU-sCu" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Admin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYu-jU-sCu" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
                                 <rect key="frame" x="55" y="150" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -720,6 +720,14 @@
                                 <state key="normal" title="Block User"/>
                                 <connections>
                                     <action selector="blockUser:" destination="ZjP-ox-PdE" eventType="touchUpInside" id="XCL-N9-0Iu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz3-zY-HLK" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="20" y="61" width="150" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Other Functions"/>
+                                <connections>
+                                    <action selector="didTapMenu" destination="ZjP-ox-PdE" eventType="touchUpInside" id="Uso-P5-aNr"/>
                                 </connections>
                             </button>
                         </subviews>
