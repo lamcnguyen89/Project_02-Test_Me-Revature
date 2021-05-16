@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SideMenu
 
 class RankingViewController: UIViewController {
 
+    var menu:SideMenuNavigationController?
     @IBOutlet weak var Rank1: UILabel!
     @IBOutlet weak var Rank2: UILabel!
     @IBOutlet weak var Rank3: UILabel!
@@ -26,14 +28,17 @@ class RankingViewController: UIViewController {
             Rank3.text = ""
             displayRank()
         }
-        // Do any additional setup after loading the view.
+        // Load Side Menu into View
+        menu = SideMenuNavigationController(rootViewController: AdminMenuListController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
     }
     
-    @IBAction func backToAdminView(_ sender: Any) {
-        
-        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let wel = sb.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
-        self.present(wel, animated: true, completion: nil)
+    @IBAction func didTapMenu() {
+        present(menu!, animated: true)
     }
     
     func displayRank(){

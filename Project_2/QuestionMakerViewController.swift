@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import SideMenu
 
 class QuestionMakerViewController: UIViewController {
     
-    
+    var menu:SideMenuNavigationController?
     @IBOutlet weak var Question: UITextField!
     @IBOutlet weak var ChoiceA: UITextField!
     @IBOutlet weak var ChoiceB: UITextField!
@@ -24,9 +25,18 @@ class QuestionMakerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Create and Load SideMenu
+        menu = SideMenuNavigationController(rootViewController: AdminMenuListController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
     }
     
+    @IBAction func didTapMenu() {
+        present(menu!, animated: true)
+    }
 
     @IBAction func Save(_ sender: Any) {
         
