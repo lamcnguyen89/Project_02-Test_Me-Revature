@@ -17,11 +17,6 @@ class RankingViewController: UIViewController {
     var allQuizzes = DBHelper.inst.getQuiz()
     var index = 0
     
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if allQuizzes.count == 0{
@@ -32,6 +27,13 @@ class RankingViewController: UIViewController {
             displayRank()
         }
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func backToAdminView(_ sender: Any) {
+        
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let wel = sb.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
+        self.present(wel, animated: true, completion: nil)
     }
     
     func displayRank(){
