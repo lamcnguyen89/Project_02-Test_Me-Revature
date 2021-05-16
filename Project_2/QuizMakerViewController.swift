@@ -6,27 +6,30 @@
 //
 
 import UIKit
+import SideMenu
 
 class QuizMakerViewController: UIViewController {
     
-
+    var menu:SideMenuNavigationController?
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var numQ: UITextField!
     @IBOutlet weak var topic: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func backToAdminView(_ sender: Any) {
         
-        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let wel = sb.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
-        self.present(wel, animated: true, completion: nil)
+        // Load Side Menu into View
+        menu = SideMenuNavigationController(rootViewController: AdminMenuListController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
     }
     
+    @IBAction func didTapMenu() {
+        present(menu!, animated: true)
+    }
     
     @IBAction func submit(_ sender: Any) {
         
