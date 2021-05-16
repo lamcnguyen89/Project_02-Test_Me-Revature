@@ -610,6 +610,55 @@
             </objects>
             <point key="canvasLocation" x="4251" y="727"/>
         </scene>
+        <!--First View Controller-->
+        <scene sceneID="4mw-7D-EI8">
+            <objects>
+                <viewController storyboardIdentifier="First" id="80K-nX-lPw" customClass="FirstViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hi4-d7-9VX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2P-Vk-OOH">
+                                <rect key="frame" x="132" y="271" width="150" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pzg-L9-U37"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dDQ-nX-zRx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iOa-iZ-WJE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3404" y="52"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WRo-8S-aJZ">
+            <objects>
+                <viewController storyboardIdentifier="Second" id="OFn-nP-Bez" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iNC-aW-XQQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTk-zU-FKF">
+                                <rect key="frame" x="132" y="426" width="150" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5FP-2r-0lg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8F-rC-HHu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5867" y="802"/>
+        </scene>
         <!--Admin View Controller-->
         <scene sceneID="md5-MB-lni">
             <objects>
@@ -789,28 +838,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCY-DY-s4L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2386.9565217391305" y="45.535714285714285"/>
-        </scene>
-        <!--Welcome View Controller-->
-        <scene sceneID="2fB-kt-a0w">
-            <objects>
-                <viewController id="lax-kF-w9G" customClass="WelcomeViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="S6Y-zx-W0o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ccv-ya-eJg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="iXE-nC-civ">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="2pz-rp-Ba6">
-                            <connections>
-                                <action selector="didTapMenu" destination="lax-kF-w9G" id="vRj-54-Of1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vrp-p9-hM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4030.434782608696" y="45.535714285714285"/>
         </scene>
         <!--Take Quiz View Controller-->
         <scene sceneID="n92-VV-vSg">
@@ -1109,29 +1136,10 @@
             </objects>
             <point key="canvasLocation" x="5641" y="46"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Hjb-GZ-jz7">
-            <objects>
-                <navigationController storyboardIdentifier="Quiz" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dlz-SZ-Lau" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="oms-w3-hUk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gl9-kI-Z16">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="x3F-f1-8tD" kind="relationship" relationship="rootViewController" id="pS1-SU-UDg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFK-SZ-jh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3109" y="46"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="m4p-Sj-vEH"/>
-        <segue reference="hbO-yu-ku6"/>
+        <segue reference="PZ8-XB-NmY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Credit Card Logo" width="298" height="34"/>
