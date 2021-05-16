@@ -826,6 +826,14 @@
                                     <segue destination="Yuk-j1-qOH" kind="show" id="PZ8-XB-NmY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fM-8R-69S" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="33" y="20" width="100" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <action selector="didTapMenu" destination="mUt-qX-6Xk" eventType="touchUpInside" id="Dxe-x1-bHH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ILl-K6-7gs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
