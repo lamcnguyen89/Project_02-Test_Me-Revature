@@ -6,21 +6,45 @@
 //
 
 import UIKit
+import SideMenu
 
 class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    
-    
-    
-    
-    //var userDict:[String:String] = [:]
+    var menu:SideMenuNavigationController?
     var user = [String]()
     var scoreArray = [Double]()
     var scoreArray2 = [Double]()
     static var selected = 0
     var blockArray = [Bool]()
     let data = DBHelper.inst.getData()
+    var data1 = DBHelper.inst.getScoreData()
     
+    
+    @IBOutlet weak var score2: UILabel!
+    @IBOutlet weak var score: UILabel!
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loadQuizScores()
+        
+        
+        menu = SideMenuNavigationController(rootViewController: AdminMenuListController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
+    }
+    
+    
+    @IBAction func blockUser(_ sender: Any) {
+        blockArray[AdminViewController.selected] = true
+        var users = user[AdminViewController.selected]
+        DBHelper.inst.updateBlock(object: users)
+        print(user[AdminViewController.selected], " blocked!")
+        
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -33,43 +57,15 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         return user[row]
         
     }
- 
-    
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         AdminViewController.selected = row
         print(row)
         print(user[row])
         score.text = String(scoreArray[row])
-       // score.text = String(scoreArray[row])
-       
-       
     }
     
-    
-    
- 
-    
-    @IBOutlet weak var score2: UILabel!
-    
-    @IBOutlet weak var score: UILabel!
-    
-   
-    
-    
-    @IBAction func blockUser(_ sender: Any) {
-        blockArray[AdminViewController.selected] = true
-        var users = user[AdminViewController.selected]
-        DBHelper.inst.updateBlock(object: users)
-        print(user[AdminViewController.selected], " blocked!")
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-        var data1 = DBHelper.inst.getScoreData()
+    func loadQuizScores() {
         var adder = 0
         var k = 0
          
@@ -77,19 +73,13 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             if j.username?.isEmpty == false{
                 adder += 1
                 scoreArray.append(0.0)
-                
             }
         }
         
-        print(adder)
-        
-        
         for i in data1{
             if i.score != 0.0{
-   //             scoreArray[k] = i.score
                 k += 1
             }
-             
          }
         
           for st in data{
@@ -98,21 +88,106 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             blockArray.append(st.block)
             user.append(st.username!)
           }
-        
-        // Do any additional setup after loading the view.
     }
     
-    /*
-    @IBAction func questionsActive(_ sender: Any) {
-       var questions = DBHelper.inst.getDataQuestions()
+
+    
+}
+
+class AdminMenuListController: UITableViewController {
+    
+    var items = [
+                 "Logout",
+                 "Auto Generate Quiz",
+                 "Create New Quiz",
+                 "Create A New Question",
+                 "View Quiz Rankings",
+                 "Delete All Data"
+                ]
+    
+    let darkColor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.backgroundColor = darkColor
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.textColor = .white
+        cell.backgroundColor = darkColor
         
-        for questions in questions{
-            print(questions.questions)
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Determine what to do when a cell in a particular section is selected.
+        switch indexPath.row {
+        
+        case 0:
+            
+            // Logout
+            print("Logout Button was clicked")
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            self.dismiss(animated: true) {
+                () -> Void in
+                // Perform Segue or push some view with your code
+                UIApplication.shared.keyWindow?.rootViewController = wel
+            }
+            
+            self.present(wel, animated: true, completion: nil)
+            
+        case 1:
+            // Autogenerate Quiz
+            print("Autogenerate Button was clicked")
+            generateQuiz()
+            
+        case 2:
+            // Create A New Quiz
+            print("New Button was clicked")
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "QuizMaker") as! QuizMakerViewController
+            self.present(wel, animated: true, completion: nil)
+            
+        case 3:
+            
+            // Create A New Question
+            print("New Button was clicked")
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "QuestionMaker") as! QuestionMakerViewController
+            self.present(wel, animated: true, completion: nil)
+            
+        case 4:
+            
+           // View User Rankings
+            print("View User Ranking Button was clicked")
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "Ranking") as! RankingViewController
+            self.present(wel, animated: true, completion: nil)
+            
+        case 5:
+            
+            // Delete all Data
+            print("Delete Button was clicked")
+            DBHelper.inst.clearData()
+            
+        default:
+            
+            print("TableView Cell was clicked")
+            
         }
     }
- */
     
-    @IBAction func generateQuiz(_ sender: Any) {
+    // Function To Autogenerate a Default
+    func generateQuiz() {
         let dic = ["ans1" : "A single use variable", "ans2" : "An array", "ans3" : "A blueprint for a class", "ans4" : "None of the above", "cans" : "A blueprint for a class"]
         DBHelper.inst.addDataQuestions(qid: "Swift", choices: dic, questionAct: "What is a protocol?")
         let dic2 = ["ans1" : "an Android iOS", "ans2" : "an Apple OS", "ans3" : "A Windows OS", "ans4" : "None of the above", "cans" : "an Apple OS"]
@@ -219,28 +294,4 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             }
         }
     }
-    @IBAction func deletetion(_ sender: Any) {
-        DBHelper.inst.clearData()
-    }
-    /*
-    @IBAction func scoresViewer(_ sender: Any) {
-       var data = DBHelper.inst.getScoreData()
-        
-        for i in data {
-            print(i.user! + " On Quiz: " + i.quiz!)
-            print("Score: " + String(i.score))
-        }
- 
-    }
- */
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

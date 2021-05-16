@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
         static var p:String = ""
     }
     
+    /*
     @IBAction func adminLogin(_ sender: Any) {
         for (i,v) in LoginViewController.GlobalVariable.adminDict{
             if(userName.text! == i && pass.text! == v){
@@ -45,6 +46,7 @@ class LoginViewController: UIViewController {
         }
         
     }
+ */
     
     
     @IBAction func login(_ sender: Any) {
@@ -53,7 +55,13 @@ class LoginViewController: UIViewController {
             LoginViewController.GlobalVariable.userDict[st.username!] = st.password
         }
         
-        var user = DBHelper.inst.getOneUser(user: userName.text!)
+        let user = DBHelper.inst.getOneUser(user: userName.text!)
+        
+        if(userName.text == "admin" && pass.text == "admin") {
+            let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "AdminViewController")
+            present(redir, animated:true, completion: nil)
+        }
+        
         
         if DBHelper.found == 1 {
             

@@ -20,8 +20,16 @@ class QuizMakerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func backToAdminView(_ sender: Any) {
+        
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let wel = sb.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
+        self.present(wel, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func submit(_ sender: Any) {
-        // notify()
+        
         var questions = DBHelper.inst.getDataQuestions()
         var questionHolder = [Question]()
         
@@ -105,14 +113,6 @@ class QuizMakerViewController: UIViewController {
         
         
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
