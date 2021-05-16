@@ -39,26 +39,36 @@ public class MenuListController: UITableViewController {
         switch indexPath.row {
         
         case 0:
-            // If the cell in the first section is selected, this will trigger the segue with the "First" Identifier
-            //self.performSegue(withIdentifier: "First", sender: nil)
+            
             print("First Button was clicked")
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "First") as! FirstViewController
             self.present(wel, animated: true, completion: nil)
+            
         case 1:
-            // If the cell in the first section is selected, this will trigger the segue with the "First" Identifier
-           // self.performSegue(withIdentifier: "Second", sender: nil)
+
             print("Second Button was clicked")
+            
         case 2:
+            
             print("Third Button was clicked")
+            
         case 3:
+            
             print("Fourth Button was clicked")
+            
         case 4:
+            
             print("Fifth Button was clicked")
+            
         case 5:
+            
             print("Sixth Button was clicked")
+            
         default:
+            
             print("TableView Cell was clicked")
+            
         }
     }
     
