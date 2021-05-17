@@ -217,6 +217,29 @@ class DBHelper{
         
     }
     
+    func updateDataSub(object : String){
+        
+        var st = User()
+        var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "username == %@", object)
+        
+        do{
+            let stu = try context?.fetch(fetchReq)
+            
+            if(stu?.count != 0){
+                st = stu?.first as! User
+                st.subtype = true
+                try context?.save()
+                
+            }
+            
+        }
+        catch{
+            print("Error")
+        }
+        
+    }
+    
     func updateBlock(object : String){
         
         var st = User()
