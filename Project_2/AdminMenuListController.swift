@@ -92,7 +92,7 @@ class AdminMenuListController: UITableViewController {
             self.present(alert, animated: true)
             
         case 2:
-            // Create A New Quiz
+        // Create A New Quiz
             print("New Button was clicked")
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "QuizMaker") as! QuizMakerViewController
@@ -102,8 +102,7 @@ class AdminMenuListController: UITableViewController {
                 UIApplication.shared.keyWindow?.rootViewController = wel
             }
         case 3:
-            
-            // Create A New Question
+        // Create A New Question
             print("New Button was clicked")
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "QuestionMaker") as! QuestionMakerViewController
@@ -114,8 +113,7 @@ class AdminMenuListController: UITableViewController {
             }
             
         case 4:
-            
-           // View User Rankings
+        // View User Rankings
             print("View User Ranking Button was clicked")
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "Ranking") as! RankingViewController
@@ -126,9 +124,8 @@ class AdminMenuListController: UITableViewController {
             }
             
         case 5:
-            
-            // Delete all Data
-            // Autogenerate Quiz
+        // Delete all Data
+        // Autogenerate Quiz
                 // Create an alert if this cell is clicked
                     let alert = UIAlertController(title: "Delete all", message: "Do you want to delete all the data?", preferredStyle: .alert)
                 // Create an action to Allow Quiz Autogeneration
