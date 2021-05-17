@@ -88,6 +88,7 @@ class RankingViewController: UIViewController {
             
             
         default:
+         
             
             var scoreArray = [Double]()
             var nameArray = [String]()
@@ -130,7 +131,7 @@ class RankingViewController: UIViewController {
                     }
                     
                 }
-                if(SbestScore < scoreArray[p] && bestScore > scoreArray[p]){
+                if(SbestScore < scoreArray[p] && bestScore > scoreArray[p] && scoreArray[p] > TbestScore){
                     SbestScore = scoreArray[p]
                     SbestName = nameArray[p]
                 }else{
@@ -145,7 +146,7 @@ class RankingViewController: UIViewController {
                 }
                 
                 //work in the below block for 3rd
-                if(TbestScore < scoreArray[p] && bestScore > scoreArray[p] && SbestScore > scoreArray[p]){
+                if(TbestScore > scoreArray[p] && bestScore > scoreArray[p] && SbestScore > scoreArray[p]){
                     TbestScore = scoreArray[p]
                     TbestName = nameArray[p]
                 }else{
@@ -169,6 +170,53 @@ class RankingViewController: UIViewController {
             print(TbestName)
             print(TbestScore)
             
+            /*
+            var bestScore = 0.0
+            var bestName = ""
+            var SbestScore = 0.0
+            var SbestName = ""
+            var TbestName = ""
+            var TbestScore = 0.0
+            
+            for i in curScores{
+                print(i.user!)
+                print(i.score)
+                if bestScore == 0.0 && i.score > 0{
+                    bestName = i.user!
+                    bestScore = i.score
+                } else if SbestScore == 0.0 && i.score > 0{
+                    SbestScore = i.score
+                    SbestName = i.user!
+                } else if TbestScore == 0.0 && i.score > 0{
+                    TbestScore = i.score
+                    TbestName = i.user!
+                } else {
+                    if(i.score > bestScore){
+                        var tempN = bestName
+                        var tempS = bestScore
+                        bestName = i.user!
+                        bestScore = i.score
+                        TbestScore = SbestScore
+                        TbestName = SbestName
+                        SbestName = tempN
+                        SbestScore = tempS
+                    } else if i.score > SbestScore{
+                        var tempN = SbestName
+                        var tempS = SbestScore
+                        SbestName = i.user!
+                        SbestScore = i.score
+                        TbestName = tempN
+                        TbestScore = tempS
+                        
+                    } else if i.score > TbestScore{
+                        TbestName = i.user!
+                        TbestScore = i.score
+                    } else {
+                        print(i.user! + "'s score was not hight enough")
+                    }
+                }
+            }
+ */
             
             /*
                 if bestScore != 0.0{
@@ -227,9 +275,9 @@ class RankingViewController: UIViewController {
                 
             
             
-            Rank3.text = bestName + " has the best score of " + String(bestScore)
+            Rank1.text = bestName + " has the best score of " + String(bestScore)
             Rank2.text = SbestName + " has the second best score of " + String(SbestScore)
-            Rank1.text = TbestName + " has the third best score of " + String(TbestScore)
+            Rank3.text = TbestName + " has the third best score of " + String(TbestScore)
         }
         
         
