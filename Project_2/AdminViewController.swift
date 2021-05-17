@@ -9,11 +9,14 @@ import UIKit
 import SideMenu
 
 class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
     var menu:SideMenuNavigationController?
     var user = [String]()
+    var quizName = [String]()
     var scoreArray = [Double]()
     var scoreArray2 = [Double]()
-    static var selected = 0
+    static var selected:Int?
+    static var namselected = 0
     var blockArray = [Bool]()
     let data = DBHelper.inst.getData()
     var data1 = DBHelper.inst.getScoreData()
@@ -21,6 +24,7 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBOutlet weak var score2: UILabel!
     @IBOutlet weak var score: UILabel!
+    
     
 
     override func viewDidLoad() {
@@ -52,11 +56,12 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @IBAction func blockUser(_ sender: Any) {
-        blockArray[AdminViewController.selected] = true
-        var users = user[AdminViewController.selected]
+        if AdminViewController.selected != nil{
+        blockArray[AdminViewController.selected!] = true
+        var users = user[AdminViewController.selected!]
         DBHelper.inst.updateBlock(object: users)
-        print(user[AdminViewController.selected], " blocked!")
-        
+        print(user[AdminViewController.selected!], " blocked!")
+        }
     }
         
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -64,18 +69,63 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return user.count
+        var num = 0
+        if pickerView.tag == 1 {
+               num = user.count
+            } else {
+                num = quizName.count
+            }
+        return num
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return user[row]
+        var nam = ""
+        if pickerView.tag == 1 {
+            nam = user[row]
+        } else {
+            nam = quizName[row]
+        }
+        return nam
         
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        AdminViewController.selected = row
-        print(row)
-        print(user[row])
-        score.text = String(scoreArray[row])
+        var userRow:Int?
+        var quizRow:Int?
+        score.text = String(0.0)
+        if pickerView.tag == 1 {
+            AdminViewController.selected = row
+           
+            userRow = row
+           // score.text = String(scoreArray[row])
+            
+        } else {
+            AdminViewController.namselected = row
+            
+            quizRow = row
+           
+            //score.text = String(scoreArray[row])
+            
+            
+        }
+
+        
+        if quizRow != nil && userRow != nil{
+            var hold = DBHelper.inst.getScoreDataOne(quiz : quizName[quizRow!], name : user[userRow!])
+        var high = 0.0
+        
+        for l in hold{
+            if DBHelper.found2 == 1{
+                if high < l.score{
+                    high = l.score
+                    print(high)
+                }
+            }
+        }
+        
+        
+        
+        score.text = String(high)
+        }
     }
     
     func loadQuizScores() {
@@ -95,12 +145,18 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             }
          }
         
-          for st in data{
+        for st in data{
             
             scoreArray2.append(st.score2)
             blockArray.append(st.block)
             user.append(st.username!)
-          }
+        }
+        var nam = DBHelper.inst.getQuiz()
+        
+        for i in nam{
+            quizName.append(i.name!)
+        }
+        
     }
     
 

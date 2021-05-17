@@ -361,7 +361,9 @@ class DBHelper{
         return stu
     }
     
+    static var found2 = 0
     func getScoreDataOne(quiz : String, name : String)->[ScoreHolder]{
+        var star = ScoreHolder()
         var st = [ScoreHolder]()
         var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "ScoreHolder")
         print("Fetched")
@@ -371,8 +373,16 @@ class DBHelper{
         
         do{
             
-            let stu = try context?.fetch(fetchReq)
-            st = stu?.first as! [ScoreHolder]
+            
+            
+            let req = try context?.fetch(fetchReq) as! [ScoreHolder]
+            if(req.count != 0 ) {
+                star = req.first!
+                
+                DBHelper.found2 = 1
+            } else {
+                DBHelper.found2 = 0
+            }
         }
         catch{
             print("cannot fetch the data")
@@ -380,6 +390,34 @@ class DBHelper{
         return st
         
     }
+    /*
+     static var found = 0
+     func getOneUser(user : String) -> User{
+         
+         var st = User()
+         var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
+         fetchReq.predicate = NSPredicate(format: "username == %@", user)
+         fetchReq.fetchLimit = 1
+         do{
+             let req = try context?.fetch(fetchReq) as! [User]
+             
+             if(req.count != 0 ) {
+                 st = req.first!
+                 
+                 DBHelper.found = 1
+             } else {
+                 DBHelper.found = 0
+             }
+         }
+         catch{
+             print("Error")
+         }
+         return st
+         
+     }
+     */
+    
+    
     
     func getScoreDataOneGeneral(name : String)->[ScoreHolder]{
         var st = [ScoreHolder]()
