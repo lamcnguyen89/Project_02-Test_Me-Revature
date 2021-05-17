@@ -15,12 +15,14 @@ class RankingViewController: UIViewController {
     @IBOutlet weak var Rank2: UILabel!
     @IBOutlet weak var Rank3: UILabel!
     @IBOutlet weak var Quiz: UILabel!
+    @IBOutlet weak var congrats: MyButtons!
     var current : Quiz?
     var allQuizzes = DBHelper.inst.getQuiz()
     var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        congrats.isHidden == true
         if allQuizzes.count == 0{
             Quiz.text = "No current quizzes"
         } else{
@@ -278,9 +280,9 @@ class RankingViewController: UIViewController {
             Rank1.text = bestName + " has the best score of " + String(bestScore)
             Rank2.text = SbestName + " has the second best score of " + String(SbestScore)
             Rank3.text = TbestName + " has the third best score of " + String(TbestScore)
-        }
         
         
+    }
     }
     
     @IBAction func next(_ sender: Any) {

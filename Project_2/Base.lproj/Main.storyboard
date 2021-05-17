@@ -624,6 +624,11 @@
                                     <action selector="next:" destination="NtG-Xm-xoM" eventType="touchUpInside" id="5u0-lM-jup"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjR-Ke-TIh" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="67" y="671" width="290" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Congrats"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GVv-jd-MbL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -634,11 +639,12 @@
                         <outlet property="Rank1" destination="ms7-Bw-BTl" id="nDN-Jy-x2d"/>
                         <outlet property="Rank2" destination="EpP-Xm-StP" id="ruK-vV-3LK"/>
                         <outlet property="Rank3" destination="ggW-u4-cKY" id="4Ax-kb-mnP"/>
+                        <outlet property="congrats" destination="BjR-Ke-TIh" id="YCn-Ge-BgB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVi-8s-nyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4251" y="727"/>
+            <point key="canvasLocation" x="4250.7246376811599" y="726.5625"/>
         </scene>
         <!--User Side Ranking View Controller-->
         <scene sceneID="5ei-O7-TtJ">
@@ -693,6 +699,15 @@
                                     <action selector="didTapMenu" destination="G3m-6l-9ZU" eventType="touchUpInside" id="oCm-Jn-Q2w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nij-qf-wJJ" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="57" y="679" width="300" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Congrats"/>
+                                <connections>
+                                    <segue destination="wN1-Zu-Rig" kind="show" id="D4J-Yv-nZ9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XbA-xK-dqa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -702,11 +717,66 @@
                         <outlet property="Rank1" destination="Mz5-Td-Ie4" id="mwK-ps-H4G"/>
                         <outlet property="Rank2" destination="D7p-s9-1gu" id="ndV-hU-DGS"/>
                         <outlet property="Rank3" destination="DaT-ex-vk0" id="UQ3-7g-ELZ"/>
+                        <outlet property="congrats" destination="nij-qf-wJJ" id="3b8-T7-qGS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vkr-yG-yoZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4962" y="727"/>
+            <point key="canvasLocation" x="4960.8695652173919" y="726.5625"/>
+        </scene>
+        <!--Reward View Controller-->
+        <scene sceneID="7hu-RB-MCU">
+            <objects>
+                <viewController id="wN1-Zu-Rig" customClass="RewardViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UCZ-9A-ee3" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1nJ-Ds-idf" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="120" y="572" width="174" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Press here to Recieve Sub"/>
+                                <connections>
+                                    <action selector="Sub:" destination="wN1-Zu-Rig" eventType="touchUpInside" id="iAH-aY-mC2"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Recognition" translatesAutoresizingMaskIntoConstraints="NO" id="oPR-iJ-rXi">
+                                <rect key="frame" x="-12" y="0.0" width="426" height="475"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZ5-na-aVv">
+                                <rect key="frame" x="120" y="227" width="174" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A+ Academy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-Bq-JHM">
+                                <rect key="frame" x="66" y="298" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izj-1g-IRr">
+                                <rect key="frame" x="265" y="298" width="38" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AKc-gw-yFg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="APA-Bv-Tob"/>
+                    <connections>
+                        <outlet property="nameCert" destination="YZ5-na-aVv" id="9yl-rQ-SSe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vma-3p-e9Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5762.3188405797109" y="732.58928571428567"/>
         </scene>
         <!--Admin View Controller-->
         <scene sceneID="md5-MB-lni">
@@ -723,7 +793,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pfm-Pf-9CI" customClass="MyPickerView" customModule="Project_2" customModuleProvider="target">
+
+                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pfm-Pf-9CI">
+
                                 <rect key="frame" x="39" y="203" width="336" height="118"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -747,6 +819,7 @@
                                     <action selector="didTapMenu" destination="ZjP-ox-PdE" eventType="touchUpInside" id="Uso-P5-aNr"/>
                                 </connections>
                             </button>
+
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="li6-fm-vQt" customClass="MyMainView" customModule="Project_2" customModuleProvider="target">
                                 <rect key="frame" x="87" y="527" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -770,7 +843,12 @@
                             </view>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wRT-qx-Cei" customClass="MyPickerView" customModule="Project_2" customModuleProvider="target">
                                 <rect key="frame" x="39" y="338" width="336" height="155"/>
+
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZjP-ox-PdE" id="7ZM-dc-G9H"/>
+                                    <outlet property="delegate" destination="ZjP-ox-PdE" id="G9f-ld-gLr"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PNy-30-XbC"/>
@@ -1211,6 +1289,9 @@
     <resources>
         <image name="Credit Card Logo" width="298" height="34"/>
         <image name="brain2" width="1280" height="1024"/>
+        <image name="Recognition" width="3300" height="2550"/>
+        <image name="brain" width="477.04998779296875" height="563.6300048828125"/>
+
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
