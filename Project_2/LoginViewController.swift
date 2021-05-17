@@ -72,6 +72,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        LoginViewController.state = ud.bool(forKey: "state")
+        diff.setOn(LoginViewController.state, animated: true)
+        if(diff.isOn == true){
+            setIDP()
+            
+            
+        }
        
     }
     
