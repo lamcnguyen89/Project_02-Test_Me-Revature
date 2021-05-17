@@ -16,27 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8M-mc-9p4" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="57" y="149" width="300" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter UserName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-nQ-nGb" customClass="MyTextFields" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="82" y="237" width="250" height="45"/>
+                                <rect key="frame" x="57" y="241" width="300" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5E5-he-lGc" customClass="MyTextFields" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="82" y="327" width="250" height="45"/>
+                                <rect key="frame" x="57" y="325" width="300" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTh-WA-sG3" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="132" y="393" width="150" height="45"/>
+                                <rect key="frame" x="57" y="426" width="100" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -44,37 +37,51 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUt-rt-b20" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="132" y="531" width="150" height="45"/>
+                                <rect key="frame" x="132" y="584" width="150" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Password Reset"/>
+                                <state key="normal" title="Get Password"/>
                                 <connections>
                                     <action selector="resetPassword:" destination="Yuk-j1-qOH" eventType="touchUpInside" id="KO0-CI-0Mi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PM2-E4-1CA" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="132" y="462" width="150" height="45"/>
+                                <rect key="frame" x="257" y="426" width="100" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUp:" destination="Yuk-j1-qOH" eventType="touchUpInside" id="Su9-Bd-W26"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YB-3o-OFF">
-                                <rect key="frame" x="77" y="622" width="130" height="20"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4U-v9-cXJ" customClass="MyMainView" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="57" y="511" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Epq-r3-j5h" customClass="MySwitch">
+                                        <rect key="frame" x="235" y="8" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="save:" destination="Yuk-j1-qOH" eventType="valueChanged" id="AfF-3T-Aws"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YB-3o-OFF">
+                                        <rect key="frame" x="8" y="13" width="130" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-Eo-Lwo" customClass="MyLongFormLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="80" y="144" width="255" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Epq-r3-j5h" customClass="MySwitch">
-                                <rect key="frame" x="277" y="617" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="save:" destination="Yuk-j1-qOH" eventType="valueChanged" id="AfF-3T-Aws"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-Eo-Lwo" customClass="MyLongFormLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="77" y="673" width="255" height="74"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8M-mc-9p4" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="90" y="44" width="235" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -100,17 +107,10 @@
         <scene sceneID="XGE-am-PXu">
             <objects>
                 <viewController storyboardIdentifier="Reset" id="MFC-AO-Kbg" customClass="ForgetPasswordViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mGJ-da-8Me" customClass="MyBackground2" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="mGJ-da-8Me" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej4-qa-BRP" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="58" y="118" width="300" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43S-pt-4nk" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
                                 <rect key="frame" x="133" y="497" width="150" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -173,6 +173,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej4-qa-BRP" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="58" y="68" width="300" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RVL-ck-Qlq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -193,12 +200,12 @@
         <scene sceneID="5BN-8N-BuI">
             <objects>
                 <viewController storyboardIdentifier="signUp" id="ao9-Hk-2TT" customClass="SignUpViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eU8-Te-3hc" customClass="MyBackground3" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="eU8-Te-3hc" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtE-BV-hD0" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="109" y="286" width="200" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtE-BV-hD0" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="109" y="294" width="200" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -225,7 +232,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FA-Rf-QqW" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
                                 <rect key="frame" x="130" y="512" width="150" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Account"/>
+                                <state key="normal" title="Create "/>
                                 <connections>
                                     <action selector="Save:" destination="ao9-Hk-2TT" eventType="touchUpInside" id="BEM-s3-s0P"/>
                                 </connections>
@@ -245,22 +252,22 @@
                                     <action selector="back:" destination="ao9-Hk-2TT" eventType="touchUpInside" id="ro3-ZY-fDV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fD-Vk-9lu" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="84" y="113" width="250" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fD-Vk-9lu" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="55" y="44" width="300" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Re-Submit Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiz-Ii-Rnc" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="84" y="399" width="250" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUp-Wb-iCQ" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="134" y="174" width="150" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUp-Wb-iCQ" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="134" y="166" width="150" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Re-Submit Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiz-Ii-Rnc" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="84" y="402" width="250" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -286,7 +293,7 @@
         <scene sceneID="j0i-nG-ozX">
             <objects>
                 <viewController storyboardIdentifier="QuestionMaker" id="Byq-XY-2vZ" customClass="QuestionMakerViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KpA-po-AKc" customClass="MyBackground5" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="KpA-po-AKc" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -513,7 +520,7 @@
         <scene sceneID="8bV-E5-J0U">
             <objects>
                 <viewController storyboardIdentifier="Free" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q47-oC-GEj" customClass="SubViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="K3F-O4-xNY" customClass="MyBackground3" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="K3F-O4-xNY" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -557,7 +564,7 @@
         <scene sceneID="qyN-aO-5Wf">
             <objects>
                 <viewController storyboardIdentifier="Ranking" id="NtG-Xm-xoM" customClass="RankingViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lsW-qo-kGw" customClass="MyBackground5" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="lsW-qo-kGw" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -625,7 +632,7 @@
         <scene sceneID="5ei-O7-TtJ">
             <objects>
                 <viewController storyboardIdentifier="UserSideRanking" id="G3m-6l-9ZU" customClass="UserSideRankingViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uOi-Uy-Xd7" customClass="MyBackground6" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="uOi-Uy-Xd7" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -693,7 +700,7 @@
         <scene sceneID="md5-MB-lni">
             <objects>
                 <viewController storyboardIdentifier="AdminViewController" id="ZjP-ox-PdE" customClass="AdminViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kwy-PQ-lr2" customClass="MyBackground4" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="kwy-PQ-lr2" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -774,7 +781,7 @@
         <scene sceneID="2Da-cl-ChF">
             <objects>
                 <viewController storyboardIdentifier="UserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mUt-qX-6Xk" customClass="UserViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0uM-To-Vo9" customClass="MyBackground6" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="0uM-To-Vo9" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -785,15 +792,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please choose a quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epI-Pz-ypu" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="133" y="273" width="160" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0aP-4X-Azb">
-                                <rect key="frame" x="0.0" y="302" width="414" height="162"/>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0aP-4X-Azb" customClass="MyPickerView" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="57" y="302" width="300" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="mUt-qX-6Xk" id="6DL-Sb-NDO"/>
@@ -816,6 +816,13 @@
                                     <action selector="didTapMenu" destination="mUt-qX-6Xk" eventType="touchUpInside" id="Dxe-x1-bHH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please choose a quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epI-Pz-ypu" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="57" y="264" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ILl-K6-7gs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -833,12 +840,12 @@
         <scene sceneID="n92-VV-vSg">
             <objects>
                 <viewController storyboardIdentifier="Quiz" id="x3F-f1-8tD" customClass="TakeQuizViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3lv-PW-Frd" customClass="MyBackground2" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="3lv-PW-Frd" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 of 25 Questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlx-CE-Mr0" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="57" y="142" width="300" height="45"/>
+                                <rect key="frame" x="47" y="154" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -852,15 +859,8 @@
                                     <action selector="didTapMenu" destination="x3F-f1-8tD" eventType="touchUpInside" id="1Vp-Gw-mXw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2d-S9-4y3" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="47" y="207" width="300" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCD-wt-hno" customClass="MyButtons" customModule="Project_2" customModuleProvider="target">
-                                <rect key="frame" x="122" y="693" width="150" height="45"/>
+                                <rect key="frame" x="45" y="679" width="100" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -963,15 +963,36 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK9-PP-h8d">
-                                <rect key="frame" x="156" y="81" width="133" height="21"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgV-Xs-Swr" customClass="MyMainView" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="166" y="679" width="201" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFZ-5S-PLk">
+                                        <rect key="frame" x="8" y="8" width="211" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK9-PP-h8d">
+                                        <rect key="frame" x="8" y="37" width="133" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quiz Time!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEn-bC-p9w" customClass="MyHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="136" y="44" width="183" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFZ-5S-PLk">
-                                <rect key="frame" x="156" y="52" width="211" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2d-S9-4y3" customClass="MySubHeadingLabels" customModule="Project_2" customModuleProvider="target">
+                                <rect key="frame" x="47" y="207" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1001,7 +1022,7 @@
         <scene sceneID="brb-ke-5vF">
             <objects>
                 <viewController storyboardIdentifier="CreditCard" id="fCy-61-8E0" customClass="CreditCardViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1TW-og-5IU" customClass="MyBackground4" customModule="Project_2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="1TW-og-5IU" customClass="MyBackground1" customModule="Project_2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
