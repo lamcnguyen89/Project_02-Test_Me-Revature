@@ -84,7 +84,11 @@ class QuizMakerViewController: UIViewController {
     }
         // There is a bug with this notification. You have to add a catch statement to make sure that there is actually a quiz present before running a notification. Else this function will crash.
         notify()
-       
+        
+        // Clear Text Fields
+        name.text = ""
+        numQ.text = ""
+        topic.text = ""
     }
     
     // There is a bug with this notification. You have to add a catch statement to make sure that there is actually a quiz present before running a notification. Else this function will crash.

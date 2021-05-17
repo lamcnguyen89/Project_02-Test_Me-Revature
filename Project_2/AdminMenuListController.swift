@@ -58,7 +58,7 @@ class AdminMenuListController: UITableViewController {
                 UIApplication.shared.keyWindow?.rootViewController = wel
             }
             
-            self.present(wel, animated: true, completion: nil)
+            
             
         case 1:
         // Autogenerate Quiz

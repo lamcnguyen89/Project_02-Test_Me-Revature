@@ -35,10 +35,10 @@
 		DE1F407F264EE99D0076CDB1 /* ScoreHolder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F407E264EE99D0076CDB1 /* ScoreHolder+CoreDataClass.swift */; };
 		DE1F4082264EE9A40076CDB1 /* ScoreHolder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F4081264EE9A40076CDB1 /* ScoreHolder+CoreDataProperties.swift */; };
 		DE1F40ED264F177B0076CDB1 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */; };
-		DE36E2092650FBCE002BE1AA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36E2082650FBCE002BE1AA /* FirstViewController.swift */; };
 		DE392E0B2650858400525DD4 /* MenuListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE392E0A2650858400525DD4 /* MenuListController.swift */; };
 		DEA96FF2264CBFF3000A1A73 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA96FF1264CBFF3000A1A73 /* Appearance.swift */; };
 		DEB3050A2651971800CA8BFD /* AdminMenuListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB305092651971800CA8BFD /* AdminMenuListController.swift */; };
+		DEC9118D2651F298005FCB63 /* UserSideRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9118C2651F298005FCB63 /* UserSideRankingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,10 +73,10 @@
 		DE1F407E264EE99D0076CDB1 /* ScoreHolder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreHolder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DE1F4081264EE9A40076CDB1 /* ScoreHolder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreHolder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
-		DE36E2082650FBCE002BE1AA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		DE392E0A2650858400525DD4 /* MenuListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListController.swift; sourceTree = "<group>"; };
 		DEA96FF1264CBFF3000A1A73 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		DEB305092651971800CA8BFD /* AdminMenuListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenuListController.swift; sourceTree = "<group>"; };
+		DEC9118C2651F298005FCB63 /* UserSideRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSideRankingViewController.swift; sourceTree = "<group>"; };
 		E317369B4B6EA56610CB5A97 /* Pods-Project_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_2.release.xcconfig"; path = "Target Support Files/Pods-Project_2/Pods-Project_2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +153,7 @@
 				DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */,
 				DE392E0A2650858400525DD4 /* MenuListController.swift */,
 				DEB305092651971800CA8BFD /* AdminMenuListController.swift */,
-				DE36E2082650FBCE002BE1AA /* FirstViewController.swift */,
+				DEC9118C2651F298005FCB63 /* UserSideRankingViewController.swift */,
 			);
 			path = Project_2;
 			sourceTree = "<group>";
@@ -288,10 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE36E2092650FBCE002BE1AA /* FirstViewController.swift in Sources */,
 				84AF9B74264ADC6200AA28B1 /* AdminViewController.swift in Sources */,
 				DE1F40ED264F177B0076CDB1 /* CreditCardViewController.swift in Sources */,
 				DE392E0B2650858400525DD4 /* MenuListController.swift in Sources */,
+				DEC9118D2651F298005FCB63 /* UserSideRankingViewController.swift in Sources */,
 				84AF9BB7264C814100AA28B1 /* ForgetPasswordViewController.swift in Sources */,
 				DE1F4079264EE9910076CDB1 /* Question+CoreDataClass.swift in Sources */,
 				84AF9B77264ADC7500AA28B1 /* UserViewController.swift in Sources */,

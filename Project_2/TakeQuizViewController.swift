@@ -9,8 +9,11 @@
 
 import UIKit
 import DLRadioButton
+import SideMenu
 
 class TakeQuizViewController: UIViewController {
+    
+    var menu: SideMenuNavigationController?
     var quizName = DBHelper.inst.getCurrentQuiz()
     var quizCheck : Quiz?
     var container : [Question]?
@@ -22,11 +25,7 @@ class TakeQuizViewController: UIViewController {
     
 
     @IBOutlet weak var time: UILabel!
-    
-    
     @IBOutlet weak var scorel: UILabel!
-    
-
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var choiceALabel: DLRadioButton!
@@ -35,7 +34,7 @@ class TakeQuizViewController: UIViewController {
     @IBOutlet weak var choiceDLabel: DLRadioButton!
     @IBOutlet weak var questionCategory: UILabel!
     
-    @IBOutlet weak var messageLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +43,13 @@ class TakeQuizViewController: UIViewController {
         TakeQuizViewController.score = 0.0
         scorel.text = "Score: " + String(TakeQuizViewController.score)
         loadQuestion()
-
-    
+        
+        // Create Side Menu
+        menu = SideMenuNavigationController(rootViewController: MenuListController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
     
     @objc func updateTimer(){
