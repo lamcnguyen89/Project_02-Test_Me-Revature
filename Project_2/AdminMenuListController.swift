@@ -58,8 +58,6 @@ class AdminMenuListController: UITableViewController {
                 UIApplication.shared.keyWindow?.rootViewController = wel
             }
             
-            
-            
         case 1:
         // Autogenerate Quiz
             // Create an alert if this cell is clicked

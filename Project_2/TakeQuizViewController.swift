@@ -65,6 +65,10 @@ class TakeQuizViewController: UIViewController {
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
     
+    @IBAction func didTapMenu() {
+        present(menu!, animated: true)
+    }
+    
     @IBAction func choiceA(_ sender: Any) {
         answerPicked = (container?[questionCount].ans1!)!
     }
