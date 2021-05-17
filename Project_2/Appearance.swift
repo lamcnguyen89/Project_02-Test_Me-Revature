@@ -29,7 +29,7 @@ class MyMainView : UIView {
         self.backgroundColor = .white
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 2.0
-        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.25).cgColor
+        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.70).cgColor
         self.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 2
@@ -53,10 +53,10 @@ class MyButtons : UIButton {
        // self.layer.masksToBounds = false
         self.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
-        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.25).cgColor
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.70).cgColor
+        self.layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
         self.layer.shadowOpacity = 1
-        self.layer.shadowRadius = 0
+        self.layer.shadowRadius = 2
         
     
     }
@@ -88,7 +88,7 @@ class MySubHeadingLabels: UILabel {
         
     }}
 
-// Class to standardize subheading labels
+// Class to standardize subheading labels that require multiple lines
 class MyLongFormLabels: UILabel {
     required init?(coder: NSCoder) {
         super.init(coder : coder)
@@ -98,7 +98,7 @@ class MyLongFormLabels: UILabel {
         self.font = UIFont.boldSystemFont(ofSize: 20.0)
         self.numberOfLines = 0
         self.lineBreakMode = NSLineBreakMode.byWordWrapping
-        
+   
         
     }}
 
@@ -141,12 +141,11 @@ class MyTextFields : UITextField {
 
           //To apply Shadow
           self.layer.shadowOpacity = 1
-          self.layer.shadowRadius = 0.0
-          self.layer.shadowOffset = CGSize.zero // Use any CGSize
+          self.layer.shadowRadius = 2.0
           self.layer.shadowColor = UIColor.gray.cgColor
           self.layer.borderColor = UIColor.black.withAlphaComponent(0.25).cgColor
-          self.layer.shadowOffset = CGSize(width: 0, height: 3)
-          self.layer.shadowColor = UIColor.black.withAlphaComponent(0.25).cgColor //Any dark color
+          self.layer.shadowOffset = CGSize(width: 4, height: 4)
+          self.layer.shadowColor = UIColor.black.withAlphaComponent(0.70).cgColor //Any dark color
     }}
 
 // Class to standardize labels that contain the questions
@@ -157,7 +156,8 @@ class MySwitch : UISwitch {
         self.layer.shadowColor = UIColor.black.withAlphaComponent(0.7).cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
         self.layer.shadowOpacity = 1
-        self.layer.shadowRadius = 0
+        self.layer.shadowRadius = 3
+        
     }
 }
 
