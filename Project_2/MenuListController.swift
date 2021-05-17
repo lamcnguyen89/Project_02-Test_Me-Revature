@@ -10,7 +10,10 @@ import SideMenu
 
 public class MenuListController: UITableViewController {
     
-    var items = ["First","Second","Third","Fourth","Fifth","Sixth"]
+    var items = ["Logout",
+                 "Choose Quiz",
+                 "Rankings"
+                 ]
     
     let darkColor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
     
@@ -39,34 +42,34 @@ public class MenuListController: UITableViewController {
         switch indexPath.row {
         
         case 0:
-            
-            print("First Button was clicked")
+            // Logout
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let wel = sb.instantiateViewController(withIdentifier: "First") as! FirstViewController
-            self.present(wel, animated: true, completion: nil)
-            
+            let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            self.dismiss(animated: true) {
+                () -> Void in
+            // Perform Segue or push some view with your code
+                UIApplication.shared.keyWindow?.rootViewController = wel
+            }
         case 1:
-
-            print("Second Button was clicked")
-            
+            // Choose Quiz
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
+            self.dismiss(animated: true) {
+                () -> Void in
+            // Perform Segue or push some view with your code
+                UIApplication.shared.keyWindow?.rootViewController = wel
+            }
         case 2:
-            
-            print("Third Button was clicked")
-            
-        case 3:
-            
-            print("Fourth Button was clicked")
-            
-        case 4:
-            
-            print("Fifth Button was clicked")
-            
-        case 5:
-            
-            print("Sixth Button was clicked")
+            // Rankings
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "UserSideRanking") as! UserSideRankingViewController
+            self.dismiss(animated: true) {
+                () -> Void in
+            // Perform Segue or push some view with your code
+                UIApplication.shared.keyWindow?.rootViewController = wel
+            }
             
         default:
-            
             print("TableView Cell was clicked")
             
         }

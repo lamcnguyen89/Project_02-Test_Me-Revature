@@ -15,26 +15,6 @@ class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewD
     var quizArray = DBHelper.inst.getQuiz()
     var quizNames = [String]()
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return quizNames.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return quizNames[row]
-        
-    }
- 
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(quizNames[row])
-        DBHelper.inst.holdCurrentQuiz(name : quizNames[row])
-       
-    }
-
     @IBOutlet weak var user: UILabel!
     
     override func viewDidLoad() {
@@ -48,9 +28,7 @@ class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewD
             else{
                 print("no", error)
             }
-            
         }
-        
         
         user.text = "Welcome " +  DBHelper.inst.current
         // Do any additional setup after loading the view.
@@ -79,7 +57,7 @@ class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewD
         print(user.subtype)
         if user.subtype == false && user.qtaken > 2.0{
             var sb = UIStoryboard(name: "Main", bundle: nil)
-            var wel = sb.instantiateViewController(withIdentifier: "free") as! UIViewController
+            var wel = sb.instantiateViewController(withIdentifier: "Free") as! UIViewController
             self.present(wel, animated: true, completion: nil)
         } else {
             var sb = UIStoryboard(name: "Main", bundle: nil)
@@ -89,7 +67,26 @@ class UserViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewD
         }
         
     }
-
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return quizNames.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return quizNames[row]
+        
+    }
+ 
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(quizNames[row])
+        DBHelper.inst.holdCurrentQuiz(name : quizNames[row])
+       
+    }
 }
 
 

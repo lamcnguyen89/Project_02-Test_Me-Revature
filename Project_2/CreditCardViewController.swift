@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SideMenu
 
 class CreditCardViewController: UIViewController {
     
-  
+    var menu: SideMenuNavigationController?
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var creditNumber: UITextField!
     @IBOutlet weak var expMonth: UITextField!
@@ -26,9 +27,21 @@ class CreditCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Create Side Menu
+        menu = SideMenuNavigationController(rootViewController: MenuListController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
     }
-
+    
+    @IBAction func didTapMenu() {
+        present(menu!, animated: true)
+    }
+    
+    
     @IBAction func submitInfo(_ sender: Any) {
         
         if(
@@ -44,9 +57,9 @@ class CreditCardViewController: UIViewController {
             phone.text != nil
         ) {
            print("Card information submitted")
-           // let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            //let wel = sb.instantiateViewController(withIdentifier: "Administrator") as! AdministratorViewController
-            //self.present(wel, animated: true, completion: nil)
+           let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+           let wel = sb.instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
+           self.present(wel, animated: true, completion: nil)
             
         } else {
             let alert = UIAlertController(title: "Payment Error", message: "You need to enter the required payment info.", preferredStyle: .alert)
