@@ -15,13 +15,15 @@ class UserSideRankingViewController: UIViewController {
     @IBOutlet weak var Rank2: UILabel!
     @IBOutlet weak var Rank3: UILabel!
     @IBOutlet weak var Quiz: UILabel!
+    @IBOutlet weak var congrats: MyButtons!
+    
     var current : Quiz?
     var allQuizzes = DBHelper.inst.getQuiz()
     var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        congrats.isHidden = true
         if allQuizzes.count == 0{
             Quiz.text = "No current quizzes"
         } else{
@@ -73,6 +75,11 @@ class UserSideRankingViewController: UIViewController {
             Rank1.text = "No User Recorded Ranks"
         case 1:
             Rank1.text = curScores[0].user! + " has the best score of " + String(curScores[0].score)
+            if DBHelper.inst.getCurrentUser() == curScores[0].user!{
+                congrats.setTitle("Congratulations! You have won a 30 Day subscription and a certificate. Please press here to accept your reward!", for: .normal)
+                congrats.isHidden = false
+                
+            }
         case 2:
             print("Here")
             var first = curScores[0]
@@ -86,17 +93,104 @@ class UserSideRankingViewController: UIViewController {
                 Rank1.text = second.user! + " has the best score of " + String(second.score)
             }
             
-            
+            if DBHelper.inst.getCurrentUser() == first.user!{
+                congrats.setTitle("Congratulations! You have won a 30 Day subscription and a certificate. Please press here to accept your reward!", for: .normal)
+                congrats.isHidden = false
+            } else {
+                congrats.setTitle("Congratulations! You have won a 30 Day subscription and a certificate. Please press here to accept your reward!", for: .normal)
+                congrats.isHidden = false
+                
+            }
             
         default:
             
-            var bestName = ""
+            var scoreArray = [Double]()
+            var nameArray = [String]()
+           
+            
+            for i in curScores{
+                //print(i.user!)
+                //print(i.score)
+                
+                scoreArray.append(i.score)
+                nameArray.append(i.user!)
+            }
+            
+            var bestName = nameArray[0]
+            var bestScore = scoreArray[0]
+            var SbestName = nameArray[1]
+            var SbestScore = scoreArray[1]
+            var TbestName = nameArray[2]
+            var TbestScore = scoreArray[2]
+            var p = 0
+            
+            print(bestName)
+            print(bestScore)
+            print(SbestName)
+            print(SbestScore)
+            print(TbestName)
+            print(TbestScore)
+            
+            for s in scoreArray{
+                if(bestScore < scoreArray[p]){
+                    bestScore = scoreArray[p]
+                    bestName = nameArray[p]
+                }else{
+                    if(bestScore < SbestScore){
+                        bestScore = SbestScore
+                        bestName = SbestName
+                    }else if(bestScore < TbestScore){
+                        bestScore = TbestScore
+                        bestName = TbestName
+                    }
+                    
+                }
+                if(SbestScore < scoreArray[p] && bestScore > scoreArray[p] && scoreArray[p] > TbestScore){
+                    SbestScore = scoreArray[p]
+                    SbestName = nameArray[p]
+                }else{
+                    if(SbestScore > bestScore){
+                        SbestScore = bestScore
+                        SbestName = bestName
+                    }else if(SbestScore < TbestScore){
+                        SbestScore = TbestScore
+                        SbestName = TbestName
+                    }
+                    
+                }
+                
+                //work in the below block for 3rd
+                if(TbestScore > scoreArray[p] && bestScore > scoreArray[p] && SbestScore > scoreArray[p]){
+                    TbestScore = scoreArray[p]
+                    TbestName = nameArray[p]
+                }else{
+                    if(TbestScore > bestScore){
+                        TbestScore = bestScore
+                        TbestName = bestName
+                    }else if(TbestScore > SbestScore){
+                        TbestScore = SbestScore
+                        TbestName = SbestName
+                    }
+                    
+                }
+                
+                
+                p += 1
+            }
+            print(bestName)
+            print(bestScore)
+            print(SbestName)
+            print(SbestScore)
+            print(TbestName)
+            print(TbestScore)
+            
+            /*
             var bestScore = 0.0
-            var SbestName = ""
+            var bestName = ""
             var SbestScore = 0.0
+            var SbestName = ""
             var TbestName = ""
             var TbestScore = 0.0
-            
             
             for i in curScores{
                 print(i.user!)
@@ -112,11 +206,22 @@ class UserSideRankingViewController: UIViewController {
                     TbestName = i.user!
                 } else {
                     if(i.score > bestScore){
+                        var tempN = bestName
+                        var tempS = bestScore
                         bestName = i.user!
                         bestScore = i.score
-                    } else if i.score > bestScore{
+                        TbestScore = SbestScore
+                        TbestName = SbestName
+                        SbestName = tempN
+                        SbestScore = tempS
+                    } else if i.score > SbestScore{
+                        var tempN = SbestName
+                        var tempS = SbestScore
                         SbestName = i.user!
                         SbestScore = i.score
+                        TbestName = tempN
+                        TbestScore = tempS
+                        
                     } else if i.score > TbestScore{
                         TbestName = i.user!
                         TbestScore = i.score
@@ -125,10 +230,84 @@ class UserSideRankingViewController: UIViewController {
                     }
                 }
             }
+ */
             
-            Rank3.text = bestName + " has the best score of " + String(bestScore)
+            /*
+                if bestScore != 0.0{
+                    SbestScore = i.score
+                    SbestName = i.user!
+                }
+                if bestScore != 0.0 && SbestScore != 0.0{
+                    TbestScore = i.score
+                    TbestName = i.user!
+                }
+               
+        
+                if(i.score > bestScore){
+                        bestName = i.user!
+                        bestScore = i.score
+                }
+                if(bestScore < SbestScore){
+                    bestScore = SbestScore
+                }
+                if(bestScore < TbestScore){
+                    bestScore = TbestScore
+                }
+                if i.score > bestScore{
+                    SbestName = i.user!
+                    SbestScore = i.score
+                }
+                if(SbestScore > TbestScore){
+                    SbestScore = TbestScore
+                }
+                if(SbestScore > bestScore){
+                    SbestScore = bestScore
+                }
+                if i.score > TbestScore{
+                    TbestName = i.user!
+                    TbestScore = i.score
+                }
+                if(TbestScore > bestScore){
+                    TbestScore = bestScore
+                }
+                if(TbestScore > SbestScore){
+                    TbestScore = SbestScore
+                }
+                print(bestName)
+                print(bestScore)
+                print(SbestName)
+                print(SbestScore)
+                print(TbestName)
+                print(TbestScore)
+                */
+                    /*else {
+                        print(i.user! + "'s score was not hight enough")
+                    }
+ */
+              
+                
+                
+            var cur = DBHelper.inst.getCurrentUser()
+             
+             if cur == bestName{
+                congrats.setTitle("Congratulations! You have won a 30 Day subscription and a certificate. Please press here to accept your reward!", for: .normal)
+                congrats.isHidden = false
+                
+             } else if cur == SbestName{
+                congrats.setTitle("Congratulations! You have won a 20 Day subscription and a certificate. Please press here to accept your reward!", for: .normal)
+                congrats.isHidden = false
+                
+             } else if cur == TbestName{
+                congrats.setTitle("Congratulations! You have won a 10 Day subscription and a certificate. Please press here to accept your reward!", for: .normal)
+                congrats.isHidden = false
+                
+             } else{
+                 congrats.isHidden = true
+             }
+            
+            Rank1.text = bestName + " has the best score of " + String(bestScore)
             Rank2.text = SbestName + " has the second best score of " + String(SbestScore)
-            Rank1.text = TbestName + " has the third best score of " + String(TbestScore)
+            Rank3.text = TbestName + " has the third best score of " + String(TbestScore)
         }
         
         
@@ -138,6 +317,7 @@ class UserSideRankingViewController: UIViewController {
         index = index + 1
         Rank2.text = ""
         Rank3.text = ""
+        congrats.isHidden = true
         displayRank()
     }
 
