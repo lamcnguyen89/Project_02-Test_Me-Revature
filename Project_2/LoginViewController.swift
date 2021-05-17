@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         
         let loginButton = FBLoginButton()
         loginButton.center = view.center
-        loginButton.center.y = 800
+        loginButton.center.y = 700
         view.addSubview(loginButton)
         
         
