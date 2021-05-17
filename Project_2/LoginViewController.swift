@@ -31,23 +31,55 @@ class LoginViewController: UIViewController {
         static var p:String = ""
     }
     
-    /*
-    @IBAction func adminLogin(_ sender: Any) {
-        for (i,v) in LoginViewController.GlobalVariable.adminDict{
-            if(userName.text! == i && pass.text! == v){
-                
-                let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "AdminViewController")
-                present(redir, animated:true, completion: nil)
-            }
-            else{
-                msg.text = "Wrong Admin ID or Password"
-                //print("Wrong USer Id or Password")
-            }
+
+        
+    override func viewDidLoad() {
+        if let token = AccessToken.current,
+            !token.isExpired {
+            
+            let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
+            present(redir, animated:true, completion: nil)
+        
+            
+            // User is logged in, do work such as go to next view controller.
         }
         
+        let loginButton = FBLoginButton()
+        loginButton.center = view.center
+        loginButton.center.y = 800
+        view.addSubview(loginButton)
+        
+        
+        // Swift
+        //
+        // Extend the code sample from 6a. Add Facebook Login to Your Code
+        // Add to your viewDidLoad method:
+        loginButton.permissions = ["public_profile", "email"]
+        
+        super.viewDidLoad()
+        LoginViewController.state = ud.bool(forKey: "state")
+        diff.setOn(LoginViewController.state, animated: true)
+        if(diff.isOn == true){
+            setIDP()
+        }
     }
- */
     
+    
+    @IBAction func signUp(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let wel = sb.instantiateViewController(withIdentifier: "signUp") as! SignUpViewController
+        self.present(wel, animated: true, completion: nil)
+    }
+ 
+    
+    
+    @IBAction func resetPassword(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let wel = sb.instantiateViewController(withIdentifier: "Reset") as! ForgetPasswordViewController
+        self.present(wel, animated: true, completion: nil)
+        
+    }
+ 
     
     @IBAction func login(_ sender: Any) {
         let data = DBHelper.inst.getData()
@@ -131,40 +163,4 @@ class LoginViewController: UIViewController {
         userName.text = ud.string(forKey:"id")
         pass.text = ud.string(forKey: "p")
         print("Data Displayed",userName.text!, pass.text!)    }
-    
-    override func viewDidLoad() {
-        if let token = AccessToken.current,
-            !token.isExpired {
-            
-            let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
-            present(redir, animated:true, completion: nil)
-        
-            
-            // User is logged in, do work such as go to next view controller.
-        }
-        
-        let loginButton = FBLoginButton()
-        loginButton.center = view.center
-        loginButton.center.y = 800
-        view.addSubview(loginButton)
-        
-        
-        // Swift
-        //
-        // Extend the code sample from 6a. Add Facebook Login to Your Code
-        // Add to your viewDidLoad method:
-        loginButton.permissions = ["public_profile", "email"]
-        
-        super.viewDidLoad()
-        LoginViewController.state = ud.bool(forKey: "state")
-        diff.setOn(LoginViewController.state, animated: true)
-        if(diff.isOn == true){
-            setIDP()
-            
-            
-        }
-        
-       
-    }
-
 }

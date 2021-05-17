@@ -32,7 +32,7 @@ class TakeQuizViewController: UIViewController {
     @IBOutlet weak var choiceBLabel: DLRadioButton!
     @IBOutlet weak var choiceCLabel: DLRadioButton!
     @IBOutlet weak var choiceDLabel: DLRadioButton!
-    @IBOutlet weak var questionCategory: UILabel!
+
     
 
     
