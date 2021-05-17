@@ -14,8 +14,8 @@ class AdminMenuListController: UITableViewController {
                  "Logout",
                  "Auto Generate Quiz",
                  "Create New Quiz",
-                 "Create A New Question",
-                 "View Quiz Rankings",
+                 "Create Question",
+                 "View Rankings",
                  "Delete All Data",
                  "User Admin Functions"
                 ]
