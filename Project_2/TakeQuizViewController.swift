@@ -50,6 +50,17 @@ class TakeQuizViewController: UIViewController {
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
     
+    // Set Autorotation to false
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
+    // Specify the supported Orientation
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    
     @objc func updateTimer(){
         seconds -= 1
         time.text = "Time Left: " + timeMaker(time: TimeInterval(seconds))

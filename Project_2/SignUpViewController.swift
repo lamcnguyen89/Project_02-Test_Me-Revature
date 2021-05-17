@@ -22,6 +22,17 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Set Autorotation to false
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
+    // Specify the supported Orientation
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    
     @IBAction func back(_ sender: Any) {
         let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
