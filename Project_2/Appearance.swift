@@ -77,7 +77,7 @@ class MyMainView : UIView {
         super.init(coder : coder)
         // MyMainView.appearance().backgroundColor = UIColor(red: 85/255 , green: 150/255 ,blue: 100/255 , alpha: 1.0)
         
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = 12
         self.layer.masksToBounds = true
     }
     
@@ -141,6 +141,22 @@ class MyLongFormLabels: UILabel {
         self.numberOfLines = 0
         self.lineBreakMode = NSLineBreakMode.byWordWrapping
         
+        
+    }}
+
+// Class to standardize subheading labels
+class MyQuestionLabels: UILabel {
+    required init?(coder: NSCoder) {
+        super.init(coder : coder)
+        //MyQuestionLabels.appearance().backgroundColor = UIColor(red: 85/255 , green: 150/255 ,blue: 100/255 , alpha: 1.0)
+        self.textColor = UIColor.black
+        self.textAlignment = .center
+        self.font = UIFont.boldSystemFont(ofSize: 20.0)
+        self.numberOfLines = 0
+        self.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.backgroundColor = UIColor.white
+        self.layer.cornerRadius = 20
+        self.layer.masksToBounds = true
         
     }}
 
