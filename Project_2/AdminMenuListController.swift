@@ -67,6 +67,7 @@ class AdminMenuListController: UITableViewController {
                 action in
                 print("Quiz Generated")
                 self.generateQuiz()
+                
                 let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let wel = sb.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
                 self.dismiss(animated: true) {
@@ -175,8 +176,40 @@ class AdminMenuListController: UITableViewController {
         }
     }
     
+    func notify() {
+        let cont = UNMutableNotificationContent()
+        var n = [String]()
+        var store = DBHelper.inst.getQuiz()
+        for s in store{
+            n.append(s.name!)
+        }
+        cont.title = n[n.count - 1]
+        cont.subtitle = "A Quiz Has Been Created"
+        cont.body = "Click here to take a Quiz"
+        
+        guard let imageurl = Bundle.main.url(forResource: "quiz", withExtension: "png") else{return}
+        do{
+            let att = try UNNotificationAttachment(identifier:"quiz", url: imageurl, options:.none)
+            cont.attachments = [att]
+            
+        }
+        catch let err{
+            print(err)
+        }
+        
+        
+        let tg = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+        let req = UNNotificationRequest(identifier:"notification.is.01", content:cont, trigger:tg)
+        UNUserNotificationCenter.current().add(req,withCompletionHandler: nil)
+        
+    }
+    
+    
+    
     // Function To Autogenerate a Default
     func generateQuiz() {
+        self.notify()
+        
         let dic = ["ans1" : "A single use variable", "ans2" : "An array", "ans3" : "A blueprint for a class", "ans4" : "None of the above", "cans" : "A blueprint for a class"]
         DBHelper.inst.addDataQuestions(qid: "Swift", choices: dic, questionAct: "What is a protocol?")
         let dic2 = ["ans1" : "an Android iOS", "ans2" : "an Apple OS", "ans3" : "A Windows OS", "ans4" : "None of the above", "cans" : "an Apple OS"]

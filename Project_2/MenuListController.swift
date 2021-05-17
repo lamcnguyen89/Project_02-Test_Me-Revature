@@ -43,12 +43,28 @@ public class MenuListController: UITableViewController {
         
         case 0:
             // Logout
-            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
-            self.dismiss(animated: true) {
+            if  LoginViewController.login == true{
+                LoginViewController.loginManager.logOut()
+                
+                print("User logout succesfully")
+                let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                self.dismiss(animated: true) {
                 () -> Void in
             // Perform Segue or push some view with your code
                 UIApplication.shared.keyWindow?.rootViewController = wel
+                }
+                
+                
+            }
+                else{
+                let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                self.dismiss(animated: true) {
+                () -> Void in
+            // Perform Segue or push some view with your code
+                UIApplication.shared.keyWindow?.rootViewController = wel
+            }
             }
         case 1:
             // Choose Quiz

@@ -11,6 +11,9 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
 
+    static let loginManager: LoginManager = LoginManager()
+    
+    static var login = false
     
     @IBOutlet weak var msg: UILabel!
     @IBOutlet weak var userName: UITextField!
@@ -31,37 +34,45 @@ class LoginViewController: UIViewController {
         static var p:String = ""
     }
     
+    @IBAction func loginFb(_ sender: Any) {
+        
+        if AccessToken.current == nil {
+                   //Session is not active
+                   
+            LoginViewController.loginManager.logIn(permissions: ["public_profile","email"], from: self, handler: { result,error   in
+                if error != nil {
+               
+                } else if result!.isCancelled {
+              print("login cancelled by user")
+                } else {
+                    LoginViewController.login = true
+                    print("login successfully")
+                    let token = result?.token?.tokenString
+                           let req = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: token, version: nil, httpMethod: .get)
+                           req.start {(connection,result,error)
+                               in
+                            print(result!)
+                           }
+                    
+                    let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
+                    self.present(redir, animated:true, completion: nil)
+                }
+            })
+            
+               } else {
+                print("already logged in")
+                let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
+                self.present(redir, animated:true, completion: nil)
+               
+               }
+    }
+    
 
         
     override func viewDidLoad() {
-        if let token = AccessToken.current,
-            !token.isExpired {
-            
-            let redir = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "UserViewController")
-            present(redir, animated:true, completion: nil)
-        
-            
-            // User is logged in, do work such as go to next view controller.
-        }
-        
-        let loginButton = FBLoginButton()
-        loginButton.center = view.center
-        loginButton.center.y = 700
-        view.addSubview(loginButton)
-        
-        
-        // Swift
-        //
-        // Extend the code sample from 6a. Add Facebook Login to Your Code
-        // Add to your viewDidLoad method:
-        loginButton.permissions = ["public_profile", "email"]
         
         super.viewDidLoad()
-        LoginViewController.state = ud.bool(forKey: "state")
-        diff.setOn(LoginViewController.state, animated: true)
-        if(diff.isOn == true){
-            setIDP()
-        }
+       
     }
     
     // Set Autorotation to false
