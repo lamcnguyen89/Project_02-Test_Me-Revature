@@ -57,6 +57,7 @@ class CreditCardViewController: UIViewController {
             phone.text != nil
         ) {
            print("Card information submitted")
+            DBHelper.inst.updateDataSub(object: DBHelper.inst.getCurrentUser())
            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
            let wel = sb.instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
            self.present(wel, animated: true, completion: nil)
