@@ -6,29 +6,45 @@
 //
 
 import UIKit
+import SideMenu
 
 class RewardViewController: UIViewController {
 
+    var menu:SideMenuNavigationController?
     @IBOutlet weak var nameCert: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameCert.text = DBHelper.inst.getCurrentUser()
 
-        // Do any additional setup after loading the view.
+        // Load Side Menu into View
+        menu = SideMenuNavigationController(rootViewController: MenuListController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
+    }
+    
+    
+    @IBAction func didTapMenu(_ sender: Any) {
+        present(menu!, animated: true)
+    }
+    
+    // Set Autorotation to false
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
+    // Specify the supported Orientation
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
     @IBAction func Sub(_ sender: Any) {
         DBHelper.inst.updateDataSub(object: DBHelper.inst.getCurrentUser())
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

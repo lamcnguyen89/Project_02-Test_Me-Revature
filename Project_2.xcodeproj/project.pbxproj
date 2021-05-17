@@ -151,9 +151,9 @@
 				84DE6A67264F01E100B7E63D /* RankingViewController.swift */,
 				DEC9118C2651F298005FCB63 /* UserSideRankingViewController.swift */,
 				DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */,
+				84DE6A9D2652FFC900B7E63D /* RewardViewController.swift */,
 				DE392E0A2650858400525DD4 /* MenuListController.swift */,
 				DEB305092651971800CA8BFD /* AdminMenuListController.swift */,
-				84DE6A9D2652FFC900B7E63D /* RewardViewController.swift */,
 			);
 			path = Project_2;
 			sourceTree = "<group>";
