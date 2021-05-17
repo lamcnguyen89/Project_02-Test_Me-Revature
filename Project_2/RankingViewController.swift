@@ -89,41 +89,143 @@ class RankingViewController: UIViewController {
             
         default:
             
-            var bestName = ""
-            var bestScore = 0.0
-            var SbestName = ""
-            var SbestScore = 0.0
-            var TbestName = ""
-            var TbestScore = 0.0
-            
+            var scoreArray = [Double]()
+            var nameArray = [String]()
+           
             
             for i in curScores{
-                print(i.user!)
-                print(i.score)
-                if bestScore == 0.0 && i.score > 0{
-                    bestName = i.user!
-                    bestScore = i.score
-                } else if SbestScore == 0.0 && i.score > 0{
+                //print(i.user!)
+                //print(i.score)
+                
+                scoreArray.append(i.score)
+                nameArray.append(i.user!)
+            }
+            
+            var bestName = nameArray[0]
+            var bestScore = scoreArray[0]
+            var SbestName = nameArray[1]
+            var SbestScore = scoreArray[1]
+            var TbestName = nameArray[2]
+            var TbestScore = scoreArray[2]
+            var p = 0
+            
+            print(bestName)
+            print(bestScore)
+            print(SbestName)
+            print(SbestScore)
+            print(TbestName)
+            print(TbestScore)
+            
+            for s in scoreArray{
+                if(bestScore < scoreArray[p]){
+                    bestScore = scoreArray[p]
+                    bestName = nameArray[p]
+                }else{
+                    if(bestScore < SbestScore){
+                        bestScore = SbestScore
+                        bestName = SbestName
+                    }else if(bestScore < TbestScore){
+                        bestScore = TbestScore
+                        bestName = TbestName
+                    }
+                    
+                }
+                if(SbestScore < scoreArray[p] && bestScore > scoreArray[p]){
+                    SbestScore = scoreArray[p]
+                    SbestName = nameArray[p]
+                }else{
+                    if(SbestScore > bestScore){
+                        SbestScore = bestScore
+                        SbestName = bestName
+                    }else if(SbestScore < TbestScore){
+                        SbestScore = TbestScore
+                        SbestName = TbestName
+                    }
+                    
+                }
+                
+                //work in the below block for 3rd
+                if(TbestScore < scoreArray[p] && bestScore > scoreArray[p] && SbestScore > scoreArray[p]){
+                    TbestScore = scoreArray[p]
+                    TbestName = nameArray[p]
+                }else{
+                    if(TbestScore > bestScore){
+                        TbestScore = bestScore
+                        TbestName = bestName
+                    }else if(TbestScore > SbestScore){
+                        TbestScore = SbestScore
+                        TbestName = SbestName
+                    }
+                    
+                }
+                
+                
+                p += 1
+            }
+            print(bestName)
+            print(bestScore)
+            print(SbestName)
+            print(SbestScore)
+            print(TbestName)
+            print(TbestScore)
+            
+            
+            /*
+                if bestScore != 0.0{
                     SbestScore = i.score
                     SbestName = i.user!
-                } else if TbestScore == 0.0 && i.score > 0{
+                }
+                if bestScore != 0.0 && SbestScore != 0.0{
                     TbestScore = i.score
                     TbestName = i.user!
-                } else {
-                    if(i.score > bestScore){
+                }
+               
+        
+                if(i.score > bestScore){
                         bestName = i.user!
                         bestScore = i.score
-                    } else if i.score > bestScore{
-                        SbestName = i.user!
-                        SbestScore = i.score
-                    } else if i.score > TbestScore{
-                        TbestName = i.user!
-                        TbestScore = i.score
-                    } else {
+                }
+                if(bestScore < SbestScore){
+                    bestScore = SbestScore
+                }
+                if(bestScore < TbestScore){
+                    bestScore = TbestScore
+                }
+                if i.score > bestScore{
+                    SbestName = i.user!
+                    SbestScore = i.score
+                }
+                if(SbestScore > TbestScore){
+                    SbestScore = TbestScore
+                }
+                if(SbestScore > bestScore){
+                    SbestScore = bestScore
+                }
+                if i.score > TbestScore{
+                    TbestName = i.user!
+                    TbestScore = i.score
+                }
+                if(TbestScore > bestScore){
+                    TbestScore = bestScore
+                }
+                if(TbestScore > SbestScore){
+                    TbestScore = SbestScore
+                }
+                print(bestName)
+                print(bestScore)
+                print(SbestName)
+                print(SbestScore)
+                print(TbestName)
+                print(TbestScore)
+                */
+                    /*else {
                         print(i.user! + "'s score was not hight enough")
                     }
-                }
-            }
+ */
+              
+                
+                
+            
             
             Rank3.text = bestName + " has the best score of " + String(bestScore)
             Rank2.text = SbestName + " has the second best score of " + String(SbestScore)
