@@ -37,6 +37,16 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
     }
     
+    // Set Autorotation to false
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
+    // Specify the supported Orientation
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     @IBAction func didTapMenu() {
         present(menu!, animated: true)
     }
