@@ -22,6 +22,7 @@
 		84BFD8D52649CC71001DB459 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFD8D12649CC71001DB459 /* User+CoreDataProperties.swift */; };
 		84DE6A1F264ECCA400B7E63D /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6A1E264ECCA400B7E63D /* SubViewController.swift */; };
 		84DE6A68264F01E100B7E63D /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6A67264F01E100B7E63D /* RankingViewController.swift */; };
+		84DE6A9E2652FFC900B7E63D /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6A9D2652FFC900B7E63D /* RewardViewController.swift */; };
 		84EE3523264B329D002AED57 /* Quiz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE3521264B329D002AED57 /* Quiz+CoreDataClass.swift */; };
 		84EE3524264B329D002AED57 /* Quiz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE3522264B329D002AED57 /* Quiz+CoreDataProperties.swift */; };
 		84EE352C264B8907002AED57 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE352B264B8907002AED57 /* SignUpViewController.swift */; };
@@ -60,6 +61,7 @@
 		84BFD8D12649CC71001DB459 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84DE6A1E264ECCA400B7E63D /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		84DE6A67264F01E100B7E63D /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		84DE6A9D2652FFC900B7E63D /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
 		84EE3521264B329D002AED57 /* Quiz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84EE3522264B329D002AED57 /* Quiz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84EE352B264B8907002AED57 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				DE1F40EC264F177B0076CDB1 /* CreditCardViewController.swift */,
 				DE392E0A2650858400525DD4 /* MenuListController.swift */,
 				DEB305092651971800CA8BFD /* AdminMenuListController.swift */,
+				84DE6A9D2652FFC900B7E63D /* RewardViewController.swift */,
 			);
 			path = Project_2;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AF9B74264ADC6200AA28B1 /* AdminViewController.swift in Sources */,
+				84DE6A9E2652FFC900B7E63D /* RewardViewController.swift in Sources */,
 				DE1F40ED264F177B0076CDB1 /* CreditCardViewController.swift in Sources */,
 				DE392E0B2650858400525DD4 /* MenuListController.swift in Sources */,
 				DEC9118D2651F298005FCB63 /* UserSideRankingViewController.swift in Sources */,
