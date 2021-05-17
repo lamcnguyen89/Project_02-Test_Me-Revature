@@ -34,8 +34,6 @@ class TakeQuizViewController: UIViewController {
     @IBOutlet weak var choiceDLabel: DLRadioButton!
 
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TakeQuizViewController.updateTimer)), userInfo: nil, repeats: true)
