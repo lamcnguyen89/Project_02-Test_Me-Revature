@@ -313,6 +313,59 @@ class AdminMenuListController: UITableViewController {
                 print(printer)
             }
         }
+        
+        let dic7 = ["ans1" : "Python", "ans2" : "Swift", "ans3" : "Java", "ans4" : "Javascript", "cans" : "Swift"]
+        DBHelper.inst.addDataQuestions(qid: "General", choices: dic7, questionAct: "What language is used for iOS devices?")
+        let dic8 = ["ans1" : "Java", "ans2" : "Swift", "ans3" : "Python", "ans4" : "Assembly", "cans" : "Assembly"]
+        DBHelper.inst.addDataQuestions(qid: "General", choices: dic8, questionAct: "Which choice is NOT a programming language")
+        let dic9 = ["ans1" : "A language you speak", "ans2" : "A database", "ans3" : "A language that produces machine code output", "ans4" : "None of the above", "cans" : "A language that produces machine code output"]
+        DBHelper.inst.addDataQuestions(qid: "General", choices: dic9, questionAct: "What is a programming language?")
+        
+        var questions3 = DBHelper.inst.getDataQuestions()
+        var questionHolder3 = [Question]()
+        
+        for question in questions3{
+            if question.qid == "General"{
+                print(question.questions!)
+                questionHolder3.append(question)
+            }
+        }
+        
+        DBHelper.inst.addQuiz(name: "General Quiz", questions: 3.0)
+        if(questionHolder3.count == 3){
+            for insertion in questionHolder3{
+                print("Got to the update code")
+                DBHelper.inst.updateQuiz(quiz: "General Quiz", question: insertion)
+            }
+            print("Attempting Retrieval Same Size")
+            var quizcheck = DBHelper.inst.getOneQuiz(quiz: "General Quiz")
+            var container = quizcheck.ztoq?.allObjects
+            for printer in container!{
+                print(printer)
+            }
+            
+        } else {
+            var newQuestionHolder = [Question]()
+            while newQuestionHolder.count < 3{
+                var pulled = questionHolder3.randomElement()
+                if newQuestionHolder.contains(pulled!){
+                    print("Already Inside")
+                } else {
+                    newQuestionHolder.append(pulled!)
+                }
+            }
+            
+            for insertion in newQuestionHolder{
+                print("Got to the update code")
+                DBHelper.inst.updateQuiz(quiz: "General Quiz", question: insertion)
+            }
+            print("Attempting Retrieval Same Size")
+            var quizcheck = DBHelper.inst.getOneQuiz(quiz: "General Quiz")
+            var container = quizcheck.ztoq?.allObjects as! [Question]
+            for printer in container{
+                print(printer)
+            }
+        }
         self.notify()
         
     }
