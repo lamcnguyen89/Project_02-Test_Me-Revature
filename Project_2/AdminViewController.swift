@@ -13,14 +13,11 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     var menu:SideMenuNavigationController?
     var user = [String]()
     var quizName = [String]()
-    var scoreArray = [Double]()
-    var scoreArray2 = [Double]()
     static var selected:Int?
-    static var namselected = 0
+    static var namselected:Int?
     var blockArray = [Bool]()
     let data = DBHelper.inst.getData()
     var data1 = DBHelper.inst.getScoreData()
-    
     
     @IBOutlet weak var score2: UILabel!
     @IBOutlet weak var score: UILabel!
@@ -56,14 +53,14 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @IBAction func blockUser(_ sender: Any) {
-        if AdminViewController.selected != nil{
-        blockArray[AdminViewController.selected!] = true
-        var users = user[AdminViewController.selected!]
-        DBHelper.inst.updateBlock(object: users)
-        print(user[AdminViewController.selected!], " blocked!")
+        if AdminViewController.selected != nil && user.isEmpty != true{
+            print(AdminViewController.selected)
+            blockArray[AdminViewController.selected!] = true
+            var users = user[AdminViewController.selected!]
+            DBHelper.inst.updateBlock(object: users)
+            print(user[AdminViewController.selected!], " blocked!")
         }
     }
-        
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -85,7 +82,6 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             nam = quizName[row]
         }
         return nam
-        
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -93,72 +89,51 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         var quizRow:Int?
         score.text = String(0.0)
         if pickerView.tag == 1 {
-            AdminViewController.selected = row
            
-            userRow = row
-           // score.text = String(scoreArray[row])
-            
-        } else {
-            AdminViewController.namselected = row
-            
             quizRow = row
-           
-            //score.text = String(scoreArray[row])
-            
-            
-        }
-
-        
-        if quizRow != nil && userRow != nil{
-            var hold = DBHelper.inst.getScoreDataOne(quiz : quizName[quizRow!], name : user[userRow!])
-        var high = 0.0
-        
-        for l in hold{
-            if DBHelper.found2 == 1{
-                if high < l.score{
-                    high = l.score
-                    print(high)
-                }
+            if quizRow != nil{
+            AdminViewController.selected = quizRow!
             }
         }
-        
-        
+        else {
+            userRow = row
+            if userRow != nil{
+            AdminViewController.namselected = userRow!
+            }
+        }
+        if AdminViewController.selected != nil && AdminViewController.namselected != nil{
+            
+            var hold = DBHelper.inst.getScoreData()
+            var high = 0.0
+            
+            for i in hold{
+                if(i.user == user[AdminViewController.selected!] && i.quiz == quizName[AdminViewController.namselected!]){
+                    print(i.score)
+                            if high < i.score{
+                                high = i.score
+                                print(high)
+                        }
+                    
+                    }
+                
+            }
         
         score.text = String(high)
         }
     }
-    
     func loadQuizScores() {
-        var adder = 0
-        var k = 0
-         
-        for j in data{
-            if j.username?.isEmpty == false{
-                adder += 1
-                scoreArray.append(0.0)
-            }
-        }
-        
-        for i in data1{
-            if i.score != 0.0{
-                k += 1
-            }
-         }
-        
         for st in data{
-            
-            scoreArray2.append(st.score2)
             blockArray.append(st.block)
             user.append(st.username!)
         }
-        var nam = DBHelper.inst.getQuiz()
-        
-        for i in nam{
-            quizName.append(i.name!)
+        var test = ""
+        for i in data1{
+            if test != i.quiz!{
+                test = i.quiz!
+                quizName.append(i.quiz!)
+            }
         }
-        
     }
-    
 
     
 }
