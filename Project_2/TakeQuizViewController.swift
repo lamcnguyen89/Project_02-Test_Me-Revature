@@ -79,6 +79,12 @@ class TakeQuizViewController: UIViewController {
     @objc func updateTimer(){
         seconds -= 1
         time.text = "Time Left: " + timeMaker(time: TimeInterval(seconds))
+        if seconds < 0{
+            let sb : UIStoryboard = UIStoryboard(name: "UserViewController", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "Reset") as! ForgetPasswordViewController
+            self.present(wel, animated: true, completion: nil)
+            
+        }
         
     }
     
