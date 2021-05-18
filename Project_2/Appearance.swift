@@ -75,6 +75,9 @@ class MyHeadingLabels: UILabel {
         self.layer.borderColor = UIColor.black.cgColor
         self.textAlignment = .center
         self.font = UIFont.systemFont(ofSize: 35.0, weight: .semibold)
+        self.minimumScaleFactor = 0.5
+        self.numberOfLines = 0
+        self.adjustsFontSizeToFitWidth = true
     }}
 
 // Class to standardize subheading labels
@@ -85,7 +88,9 @@ class MySubHeadingLabels: UILabel {
         self.textColor = UIColor.black
         self.textAlignment = .center
         self.font = UIFont.boldSystemFont(ofSize: 20.0)
-        
+        self.minimumScaleFactor = 0.5
+        self.numberOfLines = 0
+        self.adjustsFontSizeToFitWidth = true
     }}
 
 // Class to standardize subheading labels that require multiple lines
@@ -98,7 +103,9 @@ class MyLongFormLabels: UILabel {
         self.font = UIFont.boldSystemFont(ofSize: 20.0)
         self.numberOfLines = 0
         self.lineBreakMode = NSLineBreakMode.byWordWrapping
-   
+        self.minimumScaleFactor = 0.5
+        
+        self.adjustsFontSizeToFitWidth = true
         
     }}
 
@@ -115,7 +122,9 @@ class MyQuestionLabels: UILabel {
         self.backgroundColor = UIColor.white
         self.layer.cornerRadius = 20
         self.layer.masksToBounds = true
-        
+        self.minimumScaleFactor = 0.5
+        self.numberOfLines = 0
+        self.adjustsFontSizeToFitWidth = true
     }}
 
 
@@ -124,10 +133,10 @@ class MyTextFields : UITextField {
     required init?(coder: NSCoder) {
         super.init(coder : coder)
         // textFieldPlaceholder()
-        self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "placeholder", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)
+        self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "placeholder", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25)
         ])
         self.textAlignment = .center
-        self.font = UIFont.systemFont(ofSize: 20)
+        self.font = UIFont.systemFont(ofSize: 25)
         //Basic texfield Setup
           self.borderStyle = .line
           self.backgroundColor = UIColor.white // Use anycolor that give you a 2d look.
@@ -146,6 +155,7 @@ class MyTextFields : UITextField {
           self.layer.borderColor = UIColor.black.withAlphaComponent(0.25).cgColor
           self.layer.shadowOffset = CGSize(width: 4, height: 4)
           self.layer.shadowColor = UIColor.black.withAlphaComponent(0.70).cgColor //Any dark color
+          self.adjustsFontSizeToFitWidth = true
     }}
 
 // Class to standardize labels that contain the questions
