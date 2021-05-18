@@ -130,7 +130,7 @@ class DBHelper{
         
     }
     
-    /*
+    
     func getOneQuiz(quiz : String) -> Quiz{
         
         var st = Quiz()
@@ -148,8 +148,8 @@ class DBHelper{
         return st
         
     }
- */
-    
+ /*
+
     func getOneQuiz(quiz : String) -> Quiz{
         
         var st = Quiz()
@@ -170,6 +170,7 @@ class DBHelper{
         return st
         
     }
+ */
     
     static var found = 0
     func getOneUser(user : String) -> User{
@@ -346,6 +347,7 @@ class DBHelper{
         return stu
     }
     
+    static var found2 = 0
     func getScoreData()-> [ScoreHolder]{
         var stu = [ScoreHolder]()
         var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "ScoreHolder")
@@ -354,22 +356,24 @@ class DBHelper{
             stu = try context?.fetch(fetchReq) as!
      [ScoreHolder]
             
+            
+            
         }
         catch{
             print("cannot fetch the data")
         }
         return stu
     }
+    /*
     
-    static var found2 = 0
-    func getScoreDataOne(quiz : String, name : String)->[ScoreHolder]{
+    func getScoreDataOne()->ScoreHolder{
         var star = ScoreHolder()
-        var st = [ScoreHolder]()
+        var st = ScoreHolder()
         var fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "ScoreHolder")
-        print("Fetched")
-        fetchReq.predicate = NSPredicate(format: "quiz == %@", quiz)
-        fetchReq.predicate = NSPredicate(format: "user == %@", name)
-        print("Predicated")
+        //print("Fetched")
+        //fetchReq.predicate = NSPredicate(format: "quiz == %@", quiz)
+        //fetchReq.predicate = NSPredicate(format: "user == %@", name)
+        //print("Predicated")
         
         do{
             
@@ -390,6 +394,7 @@ class DBHelper{
         return st
         
     }
+ */
     /*
      static var found = 0
      func getOneUser(user : String) -> User{

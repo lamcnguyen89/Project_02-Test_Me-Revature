@@ -13,10 +13,8 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     var menu:SideMenuNavigationController?
     var user = [String]()
     var quizName = [String]()
-    var scoreArray = [Double]()
-    var scoreArray2 = [Double]()
     static var selected:Int?
-    static var namselected = 0
+    static var namselected:Int?
     var blockArray = [Bool]()
     let data = DBHelper.inst.getData()
     var data1 = DBHelper.inst.getScoreData()
@@ -56,11 +54,12 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @IBAction func blockUser(_ sender: Any) {
-        if AdminViewController.selected != nil{
-        blockArray[AdminViewController.selected!] = true
-        var users = user[AdminViewController.selected!]
-        DBHelper.inst.updateBlock(object: users)
-        print(user[AdminViewController.selected!], " blocked!")
+        if AdminViewController.selected != nil && user.isEmpty != true{
+            print(AdminViewController.selected)
+            blockArray[AdminViewController.selected!] = true
+            var users = user[AdminViewController.selected!]
+            DBHelper.inst.updateBlock(object: users)
+            print(user[AdminViewController.selected!], " blocked!")
         }
     }
         
@@ -93,42 +92,49 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         var quizRow:Int?
         score.text = String(0.0)
         if pickerView.tag == 1 {
-            AdminViewController.selected = row
            
-            userRow = row
+            quizRow = row
+            if quizRow != nil{
+            AdminViewController.selected = quizRow!
+            }
            // score.text = String(scoreArray[row])
             
         } else {
-            AdminViewController.namselected = row
             
-            quizRow = row
-           
+            userRow = row
+            if userRow != nil{
+            AdminViewController.namselected = userRow!
+            }
             //score.text = String(scoreArray[row])
             
             
         }
 
-        
-        if quizRow != nil && userRow != nil{
-            var hold = DBHelper.inst.getScoreDataOne(quiz : quizName[quizRow!], name : user[userRow!])
-        var high = 0.0
-        
-        for l in hold{
-            if DBHelper.found2 == 1{
-                if high < l.score{
-                    high = l.score
-                    print(high)
-                }
+       // print(AdminViewController.selected!, "here")
+       // print(AdminViewController.namselected!, "also here")
+        if AdminViewController.selected != nil && AdminViewController.namselected != nil{
+            
+            var hold = DBHelper.inst.getScoreData()
+            var high = 0.0
+            
+            for i in hold{
+                if(i.user == user[AdminViewController.selected!] && i.quiz == quizName[AdminViewController.namselected!]){
+                    print(i.score)
+                            if high < i.score{
+                                high = i.score
+                                print(high)
+                        }
+                    
+                    }
+                
             }
-        }
-        
-        
         
         score.text = String(high)
         }
     }
     
     func loadQuizScores() {
+        /*
         var adder = 0
         var k = 0
          
@@ -144,23 +150,31 @@ class AdminViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 k += 1
             }
          }
+ */
         
         for st in data{
             
-            scoreArray2.append(st.score2)
+            //scoreArray2.append(st.score2)
+            
             blockArray.append(st.block)
             user.append(st.username!)
         }
-        var nam = DBHelper.inst.getQuiz()
+        var test = ""
         
-        for i in nam{
-            quizName.append(i.name!)
+        for i in data1{
+            if test != i.quiz!{
+                test = i.quiz!
+                quizName.append(i.quiz!)
+                
+            }
+            
         }
         
+    }
     }
     
 
     
-}
+
 
 

@@ -13,11 +13,11 @@ class AdminMenuListController: UITableViewController {
     var items = [
                  "Logout",
                  "Auto Generate Quiz",
-                 "Create New Quiz",
-                 "Create A New Question",
-                 "View Quiz Rankings",
-                 "Delete All Data",
-                 "User Admin Functions"
+                 "New Quiz",
+                 "New Question",
+                 "Rankings",
+                 "Clear Data",
+                 "Admin Home"
                 ]
     
     let darkColor = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
