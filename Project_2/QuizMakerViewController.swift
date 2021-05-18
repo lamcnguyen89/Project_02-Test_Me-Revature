@@ -42,7 +42,7 @@ class QuizMakerViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
-        
+        notify()
         var questions = DBHelper.inst.getDataQuestions()
         var questionHolder = [Question]()
         
@@ -93,7 +93,7 @@ class QuizMakerViewController: UIViewController {
             }
     }
         // There is a bug with this notification. You have to add a catch statement to make sure that there is actually a quiz present before running a notification. Else this function will crash.
-        notify()
+        
         
         // Clear Text Fields
         name.text = ""
@@ -109,13 +109,13 @@ class QuizMakerViewController: UIViewController {
         for s in store{
             n.append(s.name!)
         }
-        cont.title = n[n.count - 1]
+        cont.title = "Quiz Time!"
         cont.subtitle = "A Quiz Has Been Created"
         cont.body = "Click here to take a Quiz"
         
-        guard let imageurl = Bundle.main.url(forResource: "quiz", withExtension: "png") else{return}
+        guard let imageurl = Bundle.main.url(forResource: "brain", withExtension: "png") else{return}
         do{
-            let att = try UNNotificationAttachment(identifier:"quiz", url: imageurl, options:.none)
+            let att = try UNNotificationAttachment(identifier:"brain", url: imageurl, options:.none)
             cont.attachments = [att]
             
         }
