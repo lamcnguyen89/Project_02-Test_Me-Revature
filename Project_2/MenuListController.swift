@@ -30,8 +30,10 @@ public class MenuListController: UITableViewController {
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = items[indexPath.row]
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = UIColor(red: 41/255 , green: 255/255 ,blue: 173/255 , alpha: 1.0)
         cell.backgroundColor = darkColor
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 25.0, weight: .semibold)
         
         return cell
     }

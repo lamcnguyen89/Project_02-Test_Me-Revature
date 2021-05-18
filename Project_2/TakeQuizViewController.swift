@@ -48,6 +48,21 @@ class TakeQuizViewController: UIViewController {
         menu?.setNavigationBarHidden(true, animated: false)
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
+        // Change Radio Button Text
+        choiceALabel.titleLabel?.minimumScaleFactor = 0.5
+        choiceALabel.titleLabel?.numberOfLines = 0
+        choiceALabel.titleLabel?.adjustsFontSizeToFitWidth = true
+        choiceBLabel.titleLabel?.minimumScaleFactor = 0.5
+        choiceBLabel.titleLabel?.numberOfLines = 0
+        choiceBLabel.titleLabel?.adjustsFontSizeToFitWidth = true
+        choiceCLabel.titleLabel?.minimumScaleFactor = 0.5
+        choiceCLabel.titleLabel?.numberOfLines = 0
+        choiceCLabel.titleLabel?.adjustsFontSizeToFitWidth = true
+        choiceDLabel.titleLabel?.minimumScaleFactor = 0.5
+        choiceDLabel.titleLabel?.numberOfLines = 0
+        choiceDLabel.titleLabel?.adjustsFontSizeToFitWidth = true
+        
     }
     
     // Set Autorotation to false
