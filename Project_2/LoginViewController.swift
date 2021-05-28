@@ -34,6 +34,32 @@ class LoginViewController: UIViewController {
         static var p:String = ""
     }
     
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        LoginViewController.state = ud.bool(forKey: "state")
+        diff.setOn(LoginViewController.state, animated: true)
+        if(diff.isOn == true){
+            setIDP()
+            
+        }
+        
+        // Put code here to autogenerate quiz
+        let admin = AdminMenuListController()
+        admin.generateQuiz()
+        
+    }
+    
+    // Set Autorotation to false
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
+    // Specify the supported Orientation
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     @IBAction func loginFb(_ sender: Any) {
         
         if AccessToken.current == nil {
@@ -66,33 +92,6 @@ class LoginViewController: UIViewController {
                
                }
     }
-    
-
-        
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        LoginViewController.state = ud.bool(forKey: "state")
-        diff.setOn(LoginViewController.state, animated: true)
-        if(diff.isOn == true){
-            setIDP()
-            
-            
-        }
-       
-    }
-    
-    // Set Autorotation to false
-    override open var shouldAutorotate: Bool {
-        return false
-    }
-    
-    // Specify the supported Orientation
-    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-    
-
     @IBAction func signUp(_ sender: Any) {
         let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let wel = sb.instantiateViewController(withIdentifier: "signUp") as! SignUpViewController
