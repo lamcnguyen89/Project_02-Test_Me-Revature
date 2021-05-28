@@ -41,9 +41,9 @@ git clone https://github.com/lamcnguyen89/Project_02-Test_Me-Revature.git
 
 ## Contributors
 
-> Jason Duncan
-> Lam Nguyen
-> Harsh Patel
+> Jason Duncan <br />
+> Lam Nguyen <br />
+> Harsh Patel <br />
 
 ## License
 
