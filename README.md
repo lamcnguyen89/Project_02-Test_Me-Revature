@@ -47,4 +47,4 @@ git clone https://github.com/lamcnguyen89/Project_02-Test_Me-Revature.git
 
 ## License
 
-This project uses the following license: [<MIT License>](<https://opensource.org/licenses/MIT>).
+This project uses the following license: [MIT License](<https://opensource.org/licenses/MIT>).
