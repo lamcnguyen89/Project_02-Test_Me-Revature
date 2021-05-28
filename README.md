@@ -31,7 +31,10 @@ git clone https://github.com/lamcnguyen89/Project_02-Test_Me-Revature.git
 ```
 * Make sure you have a mac and XCode version 12.3 or higher to run the project.
 
-- Images of what it should look like
+- Images of what it should look like:
+![Launch Screen](/Screenshots/Screen01.PNG)
+![Login Screen](/Screenshots/Screen02.PNG)
+![Question Screen](/Screenshots/Screen03.PNG)
 
 ## Usage
 
