@@ -8,7 +8,6 @@ A+ Academy is a quiz application where administrators can create quizzes and use
 
 * Xcode IDE -version 12.4
 * Swift - version 5.4
-* Tech 3 - version 3.0
 
 ## Features
 
